@@ -36,6 +36,29 @@ $registro2->execute();
 $horarios = $registro2->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<?php
+// Consulta compatible: Quitamos el filtro p.activa = 1 para que el administrador vea todo
+$sql3 = "SELECT 
+            p.id_promocion, 
+            p.nombre, 
+            p.descripcion, 
+            p.tipo_descuento, 
+            p.fecha_inicio, 
+            p.fecha_fin,
+            p.activa,
+            GROUP_CONCAT(producto.nombre SEPARATOR ', ') as productos_nombres,
+            MIN(producto.ruta) as imagen_referencia,
+            MIN(producto.precio) as precio_base
+         FROM promociones p
+         INNER JOIN promociones_productos pp ON p.id_promocion = pp.id_promocion
+         INNER JOIN productos producto ON pp.id_producto = producto.id_producto
+         WHERE p.fecha_fin >= CURDATE()
+         GROUP BY p.id_promocion, p.nombre, p.descripcion, p.tipo_descuento, p.fecha_inicio, p.fecha_fin, p.activa";
+$registro3 = $conn->prepare($sql3);
+$registro3->execute();
+$promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html class="light" lang="es">
 
@@ -118,7 +141,7 @@ $horarios = $registro2->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- SectionHeader: Productos Estrella -->
         <div class="section-header-row">
-            <h2 class="section-title">Nuestros Productos Estrella</h2>
+            <h2 class="section-title">Nuestras Promociones </h2>
             <span class="link-action">Ver Todo</span>
         </div>
 
@@ -145,59 +168,26 @@ $horarios = $registro2->fetchAll(PDO::FETCH_ASSOC);
 
         $conn = conectar();
 
-        // 1. Capture inputs
-        $search = isset($_POST['search_input']) ? trim($_POST['search_input']) : '';
-        $category = isset($_GET['categoria']) ? $_GET['categoria'] : 'Todos';
+        foreach ($promociones as $promocion) {
+            echo " <div class='product-card-vertical'> ";
+            echo " <div class='product-image-container'>
+                <img src='" . ($promocion['imagen_referencia']) . "' style='width: 100%; height: 100%; object-fit: cover;'>";
+            $badge_text = ucfirst(str_replace('_', ' ', $promocion['tipo_descuento']));
+            echo "<span class='badge-overlay'>$badge_text</span>";
 
-        // 2. Build Query
-        // Use LEFT JOIN to ensure we can filter by category name, but still get product details
-        $sql = "SELECT p.* FROM productos p LEFT JOIN categoria c ON p.id_categoria = c.id_categoria WHERE p.activo AND p.destacado=1";
-        $params = [];
-
-        // Logic: Search takes priority. If no search, check category.
-        if (!empty($search)) {
-            $sql .= " AND p.nombre LIKE :search";
-            $params[':search'] = "%$search%";
-        } elseif ($category !== 'Todos' && !empty($category)) {
-            $sql .= " AND c.nombre = :categoria";
-            $params[':categoria'] = $category;
-        }
-
-        // 3. Prepare and Execute
-        $preparar = $conn->prepare($sql);
-        $preparar->execute($params);
-        $productos = $preparar->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($preparar->rowCount() > 0) {
-
-            echo " <div class='product-grid'> ";
-            foreach ($productos as $producto) {
-
-
-
-                echo " <div class='product-card-vertical'> ";
-                echo " <div class='product-image-container' style='background-image: url($producto[ruta]);'> ";
-                if ($producto['destacado'] == 1) {
-                    echo "<span class='badge-overlay'>Más Vendido</span>";
-                }
-                echo " </div> ";
-                echo " <div class='product-info-vertical'> ";
-                echo " <p class='product-title-sm'>$producto[nombre]</p> ";
-                echo " <p class='product-meta'>$producto[descripcion]</p> ";
-                echo " <div class='price-row'> ";
-                echo " <p class='price-main'>$ $producto[precio]</p> ";
-
-                echo " </div> ";
-                // echo " <button class='btn-add-cart-sm'> ";
-                // echo " <span class='app-icon' style='font-size: 1rem;'>add_shopping_cart</span> Añadir al carrito ";
-                // echo " </button> ";
-                echo " </div> ";
-                echo " </div> ";
-            }
             echo " </div> ";
-        } else {
-            echo "No se encontraron productos";
-        } ?>
+            echo " <div class='product-info-vertical'> ";
+            echo " <p class='product-title-sm'>$promocion[nombre]</p> ";
+            echo " <p class='product-meta' style='font-size: 0.8rem; color: #666;'>Incluye: $promocion[productos_nombres]</p> ";
+            echo " <p class='product-meta'>$promocion[descripcion]</p> ";
+            echo " <div class='price-row'> ";
+            echo " <p class='price-main' style='color: var(--primary); font-weight: bold;'>¡Oferta!</p> ";
+
+            echo " </div> ";
+            echo " </div> ";
+            echo " </div> ";
+        }
+        ?>
     </div>
     <!-- Información y Sucursales Section -->
     <div class="info-box">
