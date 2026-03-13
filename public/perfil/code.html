@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil Pro-Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#1a1a1a",
+                        "card-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen font-display">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 justify-between border-b border-slate-200 dark:border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-900 dark:text-white cursor-pointer">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Perfil Pro-Dashboard</h2>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center p-2 rounded-lg bg-transparent text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<main class="max-w-4xl mx-auto pb-20">
+<!-- Profile Header Section -->
+<div class="flex p-6 @container">
+<div class="flex w-full flex-col gap-6 items-center">
+<div class="flex gap-6 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-2xl min-h-32 w-32 border-4 border-primary/20" data-alt="Professional logo for a premium meat and bun distributor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJiltJlCwEbowaT7tpYFLvDoVTsqr2HIUU8O4m44v1XCsMLxxME-KwvTnMKPWVr6A36uR8XvO7EgunyHDLmRp1D0Yvv0_w2YL4TgVO1aNTvhMUpnlb6yVZplhc9GXGYFwYKVEswrKKaOYLnxvGoMj0rRewa40B_lNQ3_HrKxt-X_gDKL-Sp16GvxkLlvpoWPTh9sGI32VBSd71a7rEvaKMf5C1hIsWs-JdufIxJ10HSrVb23kon7Iku7sVC68jP65yK9f0XNkZYQAv");'>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-black rounded-full p-1 border-4 border-background-dark">
+<span class="material-symbols-outlined text-sm font-bold block">verified</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<p class="text-slate-900 dark:text-white text-2xl font-bold leading-tight tracking-tight">Premium Buns &amp; Meats Co.</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary text-xs font-bold uppercase tracking-wider px-2 py-0.5 bg-primary/10 rounded">Distribuidor Mayorista</span>
+<span class="text-slate-500 dark:text-[#cbc190] text-sm font-normal">ID: B2B-992834</span>
+</div>
+<p class="text-slate-500 dark:text-[#cbc190] text-sm mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Ciudad de México, MX
+                        </p>
+</div>
+</div>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-primary text-black text-sm font-bold leading-normal tracking-wide transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined mr-2 text-lg">edit</span>
+<span class="truncate">Editar Perfil</span>
+</button>
+</div>
+</div>
+<!-- Stats Quick-Strip -->
+<div class="flex flex-wrap gap-4 px-4 mb-6">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-5 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Pedidos Activos</p>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">12</p>
+<span class="text-primary material-symbols-outlined">shopping_cart</span>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-5 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Límite de Crédito</p>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">$15k</p>
+<span class="text-primary material-symbols-outlined">payments</span>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-5 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Días de Crédito</p>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">30</p>
+<span class="text-primary material-symbols-outlined">calendar_today</span>
+</div>
+</div>
+</div>
+<!-- Información de la Empresa Card -->
+<div class="px-4 mb-6">
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight p-5 border-b border-slate-200 dark:border-white/5">Información de la Empresa</h2>
+<div class="flex flex-col">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 px-5 py-4 justify-between hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">fingerprint</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">RUT / Identificación Fiscal</p>
+<p class="text-slate-900 dark:text-white text-base font-semibold">900.123.456-7</p>
+</div>
+</div>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white text-xs font-bold transition-colors hover:bg-primary hover:text-black">
+                            Copiar
+                        </button>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 px-5 py-4 justify-between border-t border-slate-200 dark:border-white/5 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Contacto Principal</p>
+<p class="text-slate-900 dark:text-white text-base font-semibold">Ricardo Domínguez</p>
+</div>
+</div>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white text-xs font-bold transition-colors hover:bg-primary hover:text-black">
+                            Llamar
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sucursales y Logística Card -->
+<div class="px-4 mb-6">
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden">
+<div class="flex items-center justify-between p-5 border-b border-slate-200 dark:border-white/5">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Sucursales y Logística</h2>
+<span class="text-primary text-xs font-bold px-2 py-1 bg-primary/10 rounded">3 Activas</span>
+</div>
+<!-- Horizontal Scroll for Branches -->
+<div class="flex overflow-x-auto gap-4 p-5 no-scrollbar">
+<div class="flex-none w-64 p-4 rounded-xl bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-white/5">
+<div class="flex justify-between items-start mb-3">
+<span class="material-symbols-outlined text-primary">store</span>
+<span class="bg-green-500/20 text-green-500 text-[10px] font-bold px-1.5 py-0.5 rounded">PRINCIPAL</span>
+</div>
+<p class="text-slate-900 dark:text-white font-bold text-sm">Almacén Central Norte</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Av. Insurgentes 450, CDMX</p>
+<div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
+<span class="text-[10px] text-slate-400 font-medium">ENTREGAS: 08:00 - 14:00</span>
+<span class="material-symbols-outlined text-sm text-slate-400 cursor-pointer">map</span>
+</div>
+</div>
+<div class="flex-none w-64 p-4 rounded-xl bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-white/5">
+<div class="flex justify-between items-start mb-3">
+<span class="material-symbols-outlined text-primary">store</span>
+</div>
+<p class="text-slate-900 dark:text-white font-bold text-sm">Bodega Perisur</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Calle de la Joya 12, CDMX</p>
+<div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
+<span class="text-[10px] text-slate-400 font-medium">ENTREGAS: 09:00 - 17:00</span>
+<span class="material-symbols-outlined text-sm text-slate-400 cursor-pointer">map</span>
+</div>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full flex items-center justify-center h-10 border-2 border-dashed border-slate-200 dark:border-white/10 rounded-lg text-slate-500 dark:text-slate-400 text-sm font-bold hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined mr-2">add_circle</span>
+                        Añadir Sucursal
+                    </button>
+</div>
+</div>
+</div>
+<!-- Panel de Facturación Card -->
+<div class="px-4 mb-10">
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight p-5 border-b border-slate-200 dark:border-white/5">Panel de Facturación</h2>
+<div class="p-5">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Saldo Pendiente</p>
+<p class="text-red-500 text-xs font-bold uppercase">Vencido en 3 días</p>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">$4,250.00 <span class="text-sm font-normal text-slate-400">MXN</span></p>
+<div class="w-full bg-slate-200 dark:bg-white/10 h-2 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-[28%]"></div>
+</div>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 mt-2 font-medium">USO DE CRÉDITO: $4,250 de $15,000</p>
+</div>
+<div class="flex flex-col gap-3 justify-center">
+<button class="flex min-w-[180px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-black text-sm font-bold shadow-md shadow-primary/20">
+<span class="material-symbols-outlined mr-2">receipt_long</span>
+                                Estado de Cuenta
+                            </button>
+<button class="flex min-w-[180px] items-center justify-center rounded-lg h-10 px-4 bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white text-sm font-bold">
+<span class="material-symbols-outlined mr-2">download</span>
+                                Última Factura
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Optional for mobile feel) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-white/10 px-6 py-3 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">INICIO</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-bold">PRODUCTOS</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-[1]">account_circle</span>
+<span class="text-[10px] font-bold">PERFIL</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="text-[10px] font-bold">SOPORTE</span>
+</div>
+</div>
+</body></html>

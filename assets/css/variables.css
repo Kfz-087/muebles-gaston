@@ -1,0 +1,34 @@
+:root {
+    /* Color Palette */
+    --color-primary: rgb(124, 61, 50);
+    --color-primary-hover: rgb(124, 61, 50);
+    --color-bg-light: #f8f8f5;
+    --color-bg-dark: #121212;
+    --color-surface-light: #ffffff;
+    --color-surface-dark: #1e1e1e;
+
+    /* Text Colors */
+    --text-main-light: #111827;
+    /* gray-900 */
+    --text-sec-light: #6b7280;
+    /* gray-500 */
+    --text-main-dark: #ffffff;
+    --text-sec-dark: #9ca3af;
+    /* gray-400 */
+
+    /* Borders */
+    --border-light: #f3f4f6;
+    /* gray-100 */
+    --border-dark: #1f2937;
+    /* gray-800 */
+
+    /* Spacing & Sizing */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-full: 9999px;
+    --radius-xl: 0.75rem;
+
+    /* Fonts */
+    --font-main: 'Work Sans', sans-serif;
+}

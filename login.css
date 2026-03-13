@@ -1,0 +1,198 @@
+:root {
+    /* Color Palette */
+    --color-primary: rgb(124, 61, 50);
+    --color-primary-hover: #e1bd0c;
+    --color-bg-light: #f8f8f5;
+    --color-bg-dark: #121212;
+    --color-surface-light: #ffffff;
+    --color-surface-dark: #1e1e1e;
+
+    /* Text Colors */
+    --text-main-light: #111827;
+    /* gray-900 */
+    --text-sec-light: #6b7280;
+    /* gray-500 */
+    --text-main-dark: #ffffff;
+    --text-sec-dark: #9ca3af;
+    /* gray-400 */
+
+    /* Borders */
+    --border-light: #f3f4f6;
+    /* gray-100 */
+    --border-dark: #1f2937;
+    /* gray-800 */
+
+    /* Spacing & Sizing */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-full: 9999px;
+    --radius-xl: 0.75rem;
+
+    /* Fonts */
+    --font-main: 'Work Sans', sans-serif;
+}
+
+body {
+    background-color: var(--color-bg-light);
+}
+
+.main-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--color-bg-light);
+}
+
+.login-container {
+    background-color: var(--color-surface-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font-family: var(--font-main);
+}
+
+.register-container {
+    background-color: var(--color-surface-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120vh;
+    font-family: var(--font-main);
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+
+
+.login-container form input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius-lg);
+}
+
+.register-container form input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius-lg);
+}
+
+.register-container form input[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+}
+
+.register-container form input[type="submit"]:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.register-container form input[type="submit"]:active {
+    background-color: var(--color-primary-hover);
+}
+
+.register-container form input[type="submit"]:focus {
+    background-color: var(--color-primary-hover);
+}
+
+.register-container form input[type="submit"]:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.register-container form input[type="submit"]:hover:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.register-container form input[type="submit"]:active:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.register-container form input[type="submit"]:focus:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+}
+
+.login-container form input[type="submit"]:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"]:active {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"]:focus {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"]:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"]:hover:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"]:active:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.login-container form input[type="submit"]:focus:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+.login-parrafo {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-main);
+}
+
+.login-link {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.login-title {
+    font-family: var(--font-main);
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.login-subtitle {
+    font-family: var(--font-main);
+    text-align: center;
+    color: var(--color-primary);
+}

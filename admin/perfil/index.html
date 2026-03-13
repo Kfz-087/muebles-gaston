@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil de Usuario - Distribuidora B2B</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1c190d] dark:text-[#fcfbf8] antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-[#e5e7eb] dark:border-[#3a3520]">
+<div class="text-[#1c190d] dark:text-[#fcfbf8] flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#1c190d] dark:text-[#fcfbf8] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Perfil de Usuario</h2>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- ProfileHeader -->
+<section class="flex p-6 @container">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 border-4 border-primary shadow-sm" data-alt="Logo circular de la distribuidora de alimentos" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5Cyg0G_Jf5Mt0ld8cJ2mX7Dpc-EAp5j6NdKhni85FKXYSkN8eThZzvzrJK0QN-n33JXc4GtUqvy6YdvRbhtlBlagszI71Ng_1dHSfroo4l2MaraVGP7wEXpgVsypRfWkb4iUIQx-YNrt78wFNCqE2xzUpfz3jz2COGKswmYMRkwMZExbfFatA0f3Ah3TwI3eqzFDbrg9Cmz9WagPGJenYBWcsOQz9_JOw6WF3x0gloDufeAZnlCovzxZZTJBhNtBGZuJtC7SG7w5y");'>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<p class="text-[#1c190d] dark:text-white text-[24px] font-bold leading-tight tracking-[-0.015em]">Gourmet Burger Supply</p>
+<p class="text-[#9c8e49] dark:text-primary text-base font-medium leading-normal">ID Comercial: 900.123.456-1</p>
+</div>
+</div>
+</div>
+</section>
+<div class="h-2 bg-[#f4f1e7] dark:bg-[#2a2614] my-2"></div>
+<!-- List Options -->
+<div class="flex flex-col">
+<!-- ListItem: Mis Datos -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[64px] justify-between cursor-pointer border-b border-[#f4f1e7] dark:border-[#3a3520] active:bg-gray-100 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-[#1c190d] flex items-center justify-center rounded-lg bg-primary shrink-0 size-10">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-[#1c190d] dark:text-white text-base font-medium leading-normal flex-1 truncate">Mis Datos</p>
+</div>
+<div class="shrink-0">
+<div class="text-[#9c8e49] flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- ListItem: Direcciones de Entrega -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[64px] justify-between cursor-pointer border-b border-[#f4f1e7] dark:border-[#3a3520] active:bg-gray-100 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-[#1c190d] flex items-center justify-center rounded-lg bg-primary shrink-0 size-10">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<p class="text-[#1c190d] dark:text-white text-base font-medium leading-normal flex-1 truncate">Direcciones de Entrega</p>
+</div>
+<div class="shrink-0">
+<div class="text-[#9c8e49] flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- ListItem: Métodos de Pago -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[64px] justify-between cursor-pointer border-b border-[#f4f1e7] dark:border-[#3a3520] active:bg-gray-100 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-[#1c190d] flex items-center justify-center rounded-lg bg-primary shrink-0 size-10">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<p class="text-[#1c190d] dark:text-white text-base font-medium leading-normal flex-1 truncate">Métodos de Pago</p>
+</div>
+<div class="shrink-0">
+<div class="text-[#9c8e49] flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- ListItem: Configuración -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[64px] justify-between cursor-pointer border-b border-[#f4f1e7] dark:border-[#3a3520] active:bg-gray-100 dark:active:bg-gray-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-[#1c190d] flex items-center justify-center rounded-lg bg-primary shrink-0 size-10">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-[#1c190d] dark:text-white text-base font-medium leading-normal flex-1 truncate">Configuración de Notificaciones</p>
+</div>
+<div class="shrink-0">
+<div class="text-[#9c8e49] flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Logout Button Section -->
+<div class="px-4 mt-10">
+<button class="w-full bg-[#1c190d] dark:bg-primary py-4 px-6 rounded-xl flex items-center justify-center gap-2 text-primary dark:text-[#1c190d] font-bold text-lg active:scale-95 transition-transform shadow-lg">
+<span class="material-symbols-outlined">logout</span>
+                        Cerrar Sesión
+                    </button>
+<p class="text-center text-sm text-[#9c8e49] mt-6">Versión 2.4.0 (Build 102)</p>
+</div>
+</div>
+</main>
+<!-- iOS Style Bottom Navigation -->
+<nav class="fixed bottom-0 w-full max-w-[430px] bg-white dark:bg-[#1a180c] border-t border-[#e5e7eb] dark:border-[#3a3520] px-6 py-2 pb-6 flex justify-between items-center z-20">
+<div class="flex flex-col items-center gap-1 cursor-pointer text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Inicio</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-medium">Pedidos</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-medium">Catálogo</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer text-primary">
+<span class="material-symbols-outlined fill-[1]">person</span>
+<span class="text-[10px] font-bold">Perfil</span>
+</div>
+</nav>
+<!-- Safe Area Home Indicator (Visual) -->
+<div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 dark:bg-gray-700 rounded-full z-30"></div>
+</div>
+</body></html>

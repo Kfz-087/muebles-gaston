@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Ventas (Admin)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Main Container -->
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 border-b border-slate-200 dark:border-slate-800 justify-between">
+<div class="flex items-center gap-3">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">Gestión de Ventas</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Summary Cards -->
+<section class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 bg-primary shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-900 text-sm font-semibold uppercase tracking-wider">Ventas de Hoy</p>
+<span class="material-symbols-outlined text-slate-800">today</span>
+</div>
+<p class="text-slate-900 text-3xl font-bold leading-tight">$450,000</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-700 text-sm">trending_up</span>
+<p class="text-green-700 text-sm font-bold">+12.5% vs ayer</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 bg-slate-900 dark:bg-slate-800 shadow-sm border border-slate-700">
+<div class="flex items-center justify-between">
+<p class="text-primary text-sm font-semibold uppercase tracking-wider">Ventas del Mes</p>
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+</div>
+<p class="text-white text-3xl font-bold leading-tight">$8.24M</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+<p class="text-primary text-sm font-bold">+5.2% vs mes ant.</p>
+</div>
+</div>
+</section>
+<!-- Search and Filters -->
+<section class="px-4 py-2">
+<div class="relative flex items-center mb-4">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="w-full bg-white dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary shadow-sm" placeholder="Buscar por cliente o ID..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-sm">event</span>
+<span class="text-sm font-medium">Últimos 7 días</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span class="text-sm font-medium">Método de Pago</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-sm">tune</span>
+<span class="text-sm font-medium">Filtros</span>
+</button>
+</div>
+</section>
+<!-- Transaction List -->
+<section class="flex-1 px-4 pb-24">
+<div class="flex items-center justify-between mb-3 mt-4">
+<h2 class="text-lg font-bold">Transacciones Recientes</h2>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-widest">24 Resultados</span>
+</div>
+<div class="space-y-3">
+<!-- Transaction Item 1 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">#ORD-98234</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Burger King Co. (Distribuidor)</h3>
+<p class="text-xs text-slate-500 mt-1">24 Oct 2023 • 14:30</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">$125,400</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Completado</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+<span class="text-xs font-medium">Transferencia Bancaria</span>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+                            DETALLES <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Transaction Item 2 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">#ORD-98231</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Hot Dog Haven</h3>
+<p class="text-xs text-slate-500 mt-1">24 Oct 2023 • 12:15</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">$45,200</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Completado</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span class="text-xs font-medium">Efectivo</span>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+                            DETALLES <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Transaction Item 3 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">#ORD-98229</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">La Parrilla de Juan</h3>
+<p class="text-xs text-slate-500 mt-1">24 Oct 2023 • 10:45</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">$82,000</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Completado</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined text-sm">credit_card</span>
+<span class="text-xs font-medium">Tarjeta de Débito</span>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+                            DETALLES <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Transaction Item 4 -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col gap-3 opacity-80">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-tighter">#ORD-98225</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Snack Bar Central</h3>
+<p class="text-xs text-slate-500 mt-1">23 Oct 2023 • 18:00</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">$21,900</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400">Pendiente</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+<span class="text-xs font-medium">Transferencia</span>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+                            DETALLES <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-16">
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined active-icon">bar_chart</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Ventas</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Clientes</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Stock</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Ajustes</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

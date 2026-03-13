@@ -1,0 +1,207 @@
+:root {
+    /* Color Palette */
+    --color-primary: #f2cc0d;
+    --color-primary-hover: #e1bd0c;
+    --color-bg-light: #f8f8f5;
+    --color-bg-dark: #121212;
+    --color-surface-light: #ffffff;
+    --color-surface-dark: #1e1e1e;
+
+    /* Text Colors */
+    --text-main-light: #111827;
+    /* gray-900 */
+    --text-sec-light: #6b7280;
+    /* gray-500 */
+    --text-main-dark: #ffffff;
+    --text-sec-dark: #9ca3af;
+    /* gray-400 */
+
+    /* Borders */
+    --border-light: #f3f4f6;
+    /* gray-100 */
+    --border-dark: #1f2937;
+    /* gray-800 */
+
+    /* Spacing & Sizing */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-full: 9999px;
+    --radius-xl: 0.75rem;
+
+    /* Fonts */
+    --font-main: 'Work Sans', sans-serif;
+}
+
+.modificar {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 3px;
+    text-align: start;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    display: -webkit-box;
+    /* overflow: scroll; */
+}
+
+.modal-content {
+
+
+    background-color: var(--color-surface-light);
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 650px;
+    /* overflow-y: scroll; */
+    max-height: 40vh;
+    height: 40vh;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-lg);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: modal 1.5s ease-in-out;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent backdrop */
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal h1 {
+    margin-bottom: 15px;
+}
+
+.modal label {
+    margin-bottom: 250px;
+    padding-bottom: 15px;
+}
+
+
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modificar label {
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 3px;
+    text-align: start;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    display: -webkit-box;
+    overflow: scroll;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 3px;
+    text-align: start;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    display: -webkit-box;
+    overflow: scroll;
+    background-color: #fff;
+    border: none;
+}
+
+.modificar-imagen {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.modificar-imagen input {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+input[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    width: 25%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    display: -webkit-box;
+    overflow: scroll;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="submit"]:active {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="submit"]:focus {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="submit"]:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="submit"]:hover:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="submit"]:active:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="submit"]:focus:disabled {
+    background-color: var(--color-primary-hover);
+}
+
+/* Duplicate .modal removed */

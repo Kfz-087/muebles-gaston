@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mis Pedidos Expandido</title>
+    <!-- Google Fonts: Work Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#1c190d] dark:text-[#fcfbf8]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- Top Navigation Bar -->
+        <header
+            class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-[#e8e4ce] dark:border-[#3d3a2a]">
+            <div class="flex items-center p-4 pb-2 justify-between">
+                <div class="text-[#1c190d] dark:text-[#fcfbf8] flex size-12 shrink-0 items-center">
+                    <span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+                </div>
+                <h2
+                    class="text-[#1c190d] dark:text-[#fcfbf8] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                    Mis Pedidos</h2>
+                <div class="flex w-12 items-center justify-end">
+                    <button
+                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#1c190d] dark:text-[#fcfbf8] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+                        <span class="material-symbols-outlined">filter_list</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 flex flex-col">
+            <!-- Search Bar -->
+            <section class="px-4 py-3">
+                <label class="flex flex-col min-w-40 h-12 w-full">
+                    <div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+                        <div
+                            class="text-[#9c8e49] flex border-none bg-white dark:bg-[#3d3a2a] items-center justify-center pl-4 rounded-l-xl border-r-0">
+                            <span class="material-symbols-outlined">search</span>
+                        </div>
+                        <input
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#1c190d] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#3d3a2a] focus:border-none h-full placeholder:text-[#9c8e49] px-4 pl-2 text-base font-normal leading-normal"
+                            placeholder="Buscar por ID o fecha..." value="" />
+                    </div>
+                </label>
+            </section>
+            <!-- Status Chips (Category Filter) -->
+            <section class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+                <div
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 border border-primary">
+                    <p class="text-[#1c190d] text-sm font-bold leading-normal">Todos</p>
+                </div>
+                <div
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#3d3a2a] px-4 border border-[#e8e4ce] dark:border-[#3d3a2a]">
+                    <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-medium leading-normal">Pendientes</p>
+                </div>
+                <div
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#3d3a2a] px-4 border border-[#e8e4ce] dark:border-[#3d3a2a]">
+                    <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-medium leading-normal">En camino</p>
+                </div>
+                <div
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#3d3a2a] px-4 border border-[#e8e4ce] dark:border-[#3d3a2a]">
+                    <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-medium leading-normal">Entregados</p>
+                </div>
+            </section>
+            <!-- Order Cards Container -->
+            <div class="p-4 flex flex-col gap-6">
+                <!-- Expanded Order Card 1 (Active) -->
+                <div
+                    class="flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-white dark:bg-[#2a2718] border border-[#e8e4ce] dark:border-[#3d3a2a] overflow-hidden">
+                    <div class="w-full h-32 bg-center bg-no-repeat bg-cover"
+                        data-alt="Modern wholesale distribution warehouse interior"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOiRbSeKumaSdcpP2-sfzY1zVgxxY5pfgVAtucUQuDh8OlcZ7u_sQPHREtVkCEzQ-G5xDSMXjA3e1wyKXNbIZRlN8cSeWaB3a7BkmBd_FdryLOvRw0sDXs3SQM1NlXmCvdtQV9znB4K5FgmSnb0YSibjBDOiCoMJ__kCT-Tvl8z4URnicrrMnsvEgxhXqrmNIdSvLLz3SBK0tM1zNnwZnNpF_pAaZXAaep2sdETboxt5klg3ME7THSKjWt2LbqFCywluCg3rgJXDEi");'>
+                        <div class="w-full h-full bg-black/40 p-4 flex items-start justify-between">
+                            <span
+                                class="bg-primary text-[#1c190d] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">local_shipping</span> En Camino
+                            </span>
+                            <p class="text-white text-sm font-medium shadow-sm">ID: #84920</p>
+                        </div>
+                    </div>
+                    <div class="flex w-full flex-col items-stretch justify-center gap-1 py-4 px-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-[#9c8e49] text-xs font-medium uppercase tracking-widest">24 Oct, 2023 • 10:30
+                                AM</p>
+                        </div>
+                        <p
+                            class="text-[#1c190d] dark:text-[#fcfbf8] text-xl font-bold leading-tight tracking-[-0.015em] mt-1">
+                            Suministro Semanal Burgers</p>
+                        <div class="mt-3 flex flex-col gap-2 border-l-2 border-primary/30 pl-3">
+                            <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-normal leading-normal">
+                                <span class="font-bold">10x</span> Pan de Burger Brioche
+                            </p>
+                            <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-normal leading-normal">
+                                <span class="font-bold">5x</span> Carne Angus (Caja 12 pzs)
+                            </p>
+                            <p class="text-[#9c8e49] text-sm font-normal">+ 3 artículos más</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-[#e8e4ce] dark:border-[#3d3a2a]">
+                            <h4 class="text-xs font-bold uppercase text-[#9c8e49] mb-4">Estado del Pedido</h4>
+                            <!-- Timeline Component Integrated -->
+                            <div class="grid grid-cols-[30px_1fr] gap-x-2 mb-4">
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                    <div class="w-[2px] bg-primary h-6"></div>
+                                </div>
+                                <div class="flex flex-col pb-4">
+                                    <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-bold">Pedido Recibido</p>
+                                    <p class="text-[#9c8e49] text-xs">10:30 AM</p>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-primary text-xl">inventory_2</span>
+                                    <div class="w-[2px] bg-primary h-6"></div>
+                                </div>
+                                <div class="flex flex-col pb-4">
+                                    <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-bold">Preparado en Almacén
+                                    </p>
+                                    <p class="text-[#9c8e49] text-xs">11:45 AM</p>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-[#9c8e49] text-xl">local_shipping</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-[#1c190d] dark:text-[#fcfbf8] text-sm font-bold">En Camino</p>
+                                    <p class="text-primary text-xs font-bold uppercase">En progreso</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-4 bg-background-light dark:bg-[#3d3a2a] p-3 rounded-lg">
+                            <div class="flex flex-col">
+                                <p class="text-[#9c8e49] text-xs font-medium uppercase">Total Facturado</p>
+                                <p class="text-[#1c190d] dark:text-[#fcfbf8] text-xl font-black">$2,450.00</p>
+                            </div>
+                            <button
+                                class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-[#1c190d] text-sm font-bold shadow-md hover:brightness-105 transition-all">
+                                <span>Ver Factura</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Secondary Order Card (Delivered) -->
+                <div
+                    class="flex flex-col items-stretch justify-start rounded-xl shadow-md bg-white dark:bg-[#2a2718] border border-[#e8e4ce] dark:border-[#3d3a2a] opacity-90">
+                    <div class="flex w-full flex-col items-stretch justify-center gap-1 py-5 px-4">
+                        <div class="flex justify-between items-center">
+                            <p class="text-[#9c8e49] text-xs font-medium uppercase">18 Oct, 2023</p>
+                            <span
+                                class="bg-[#f4f1e7] dark:bg-[#3d3a2a] text-[#1c190d] dark:text-[#fcfbf8] text-[10px] font-bold px-2 py-0.5 rounded-full border border-[#e8e4ce] dark:border-[#524d3a]">
+                                ENTREGADO
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-end mt-2">
+                            <div>
+                                <p class="text-[#1c190d] dark:text-[#fcfbf8] text-lg font-bold leading-tight">Pedido
+                                    #84812</p>
+                                <p class="text-[#9c8e49] text-sm mt-1">20x Salchicha Jumbo, 10x Pan Hot Dog</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[#1c190d] dark:text-[#fcfbf8] text-lg font-bold">$840.00</p>
+                                <button
+                                    class="text-primary text-xs font-bold uppercase mt-1 flex items-center gap-1 justify-end">
+                                    <span class="material-symbols-outlined text-sm">refresh</span> Reordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tertiary Order Card (Cancelled/Issue) -->
+                <div
+                    class="flex flex-col items-stretch justify-start rounded-xl shadow-md bg-white dark:bg-[#2a2718] border border-[#e8e4ce] dark:border-[#3d3a2a] opacity-90 border-l-4 border-l-red-500">
+                    <div class="flex w-full flex-col items-stretch justify-center gap-1 py-5 px-4">
+                        <div class="flex justify-between items-center">
+                            <p class="text-[#9c8e49] text-xs font-medium uppercase">15 Oct, 2023</p>
+                            <span
+                                class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-red-200 dark:border-red-900">
+                                CANCELADO
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-end mt-2">
+                            <div>
+                                <p class="text-[#1c190d] dark:text-[#fcfbf8] text-lg font-bold leading-tight">Pedido
+                                    #84755</p>
+                                <p class="text-[#9c8e49] text-sm mt-1">Suministro de Salsas Variadas</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[#1c190d] dark:text-[#fcfbf8] text-lg font-bold">$320.00</p>
+                                <button class="text-[#9c8e49] text-xs font-bold uppercase mt-1">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Padding for Navigation Bar -->
+            <div class="h-24"></div>
+        </main>
+        <!-- iOS Bottom Navigation Bar -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-[#221f10]/95 backdrop-blur-md border-t border-[#e8e4ce] dark:border-[#3d3a2a] px-6 py-3 flex justify-between items-center z-50">
+            <div
+                class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-[#221f10]/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 pb-6 pt-2">
+                <div class="flex justify-around items-center">
+                    <a href="/distribuidora-frami/public/index.php" class="flex flex-col items-center text-gray-400">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="text-[10px] font-medium">Inicio</span>
+                    </a>
+                    <a href="../catalogo/index.php" class="flex flex-col items-center text-gray-400">
+                        <span class="material-symbols-outlined">grid_view</span>
+                        <span class="text-[10px] font-medium">Catálogo</span>
+                    </a>
+                    <a href="/distribuidora-frami/public/pedidos/index.php"
+                        class="flex flex-col items-center text-gray-400">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span class="text-[10px] font-medium">Pedidos</span>
+                    </a>
+                    <a href="/distribuidora-frami/public/perfil/index.php"
+                        class="flex flex-col items-center text-gray-400">
+                        <span class="material-symbols-outlined">person</span>
+                        <span class="text-[10px] font-medium">Perfil</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

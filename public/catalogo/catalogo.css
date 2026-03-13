@@ -1,0 +1,219 @@
+@import url('../../assets/css/variables.css');
+
+/* Estilos para el Modal de Edición de Catálogo */
+.modal-editar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5vh 10px;
+    box-sizing: border-box;
+}
+
+.modal-editar.is-active {
+    display: flex;
+}
+
+#modal-crear {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5vh 10px;
+    box-sizing: border-box;
+}
+
+#modal-crear.is-active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    width: 95%;
+    max-width: 500px;
+    position: relative;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #1e293b;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    width: 100%;
+    background-color: #fff;
+    color: #1e293b;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.cerrar {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #94a3b8;
+    line-height: 1;
+}
+
+.cerrar:hover {
+    color: #64748b;
+}
+
+.btn-save-producto {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.btn-save-producto:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn-save-producto:active {
+    transform: scale(0.98);
+}
+
+.img-preview-container {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.img-preview-container img {
+    max-height: 120px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+#qr-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5vh 10px;
+    box-sizing: border-box;
+}
+
+#qr-modal.is-active {
+    display: flex;
+}
+
+.qrcode {
+    background-color: #fff;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    width: 95%;
+    max-width: 500px;
+    position: relative;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: 1px solid var(--border-light);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+}
+
+.dark .bottom-nav {
+    background-color: var(--color-bg-dark);
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #9ca3af;
+    /* slate-400 */
+}
+
+.nav-item.active {
+    color: var(--color-primary);
+}
+
+.nav-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+}
