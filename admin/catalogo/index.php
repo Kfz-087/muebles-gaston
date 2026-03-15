@@ -164,7 +164,7 @@
             $category = isset($_GET['categoria']) ? $_GET['categoria'] : 'Todos';
 
             // 2. Build Query
-            $sql = "SELECT p.* FROM productos p LEFT JOIN categoria c ON p.id_categoria  = c.id_categoria WHERE p.activo=1";
+            $sql = "SELECT p.* FROM productos p LEFT JOIN categoria c ON p.id_categoria  = c.id_categoria ORDER BY activo DESC";
             $params = [];
 
             if (!empty($search)) {
@@ -185,28 +185,54 @@
                     ?>
                     <div
                         class="flex flex-col gap-2 pb-4 bg-white dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#e8e4d8] dark:border-[#3d3920]">
-                        <div class="relative w-full aspect-square bg-center bg-no-repeat bg-cover"
-                            style="background-image: url('<?php echo htmlspecialchars($producto['ruta']); ?>');">
+                        <div class="relative w-full aspect-square overflow-hidden">
+                            <!-- Background Image Layer -->
+                            <div class="absolute inset-0 bg-center bg-no-repeat bg-cover"
+                                style="background-image: url('<?php echo htmlspecialchars($producto['ruta']); ?>'); <?php echo ($producto['activo'] != 1) ? 'filter: grayscale(100%); opacity: 0.8;' : ''; ?>">
+                            </div>
 
-                            <?php if ($producto['destacado'] == 1): ?>
+                            <!-- Badges -->
+                            <?php if ($producto['activo'] != 1): ?>
                                 <span
-                                    class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Más
+                                    class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider z-10">Inactivo</span>
+                            <?php elseif ($producto['destacado'] == 1): ?>
+                                <span
+                                    class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider z-10">Más
                                     Vendido</span>
                             <?php endif; ?>
 
                             <!-- Action Buttons -->
-                            <div class="absolute top-2 right-2 flex flex-col gap-2">
-                                <button
-                                    class="btn-modificar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
-                                    data-id="<?php echo $producto['id_producto']; ?>">
-                                    <span class="material-symbols-outlined text-lg">edit</span>
-                                </button>
-                                <button
-                                    class="btn-borrar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
-                                    data-id="<?php echo $producto['id_producto']; ?>">
-                                    <span class="material-symbols-outlined text-lg">delete</span>
-                                </button>
-                            </div>
+                            <?php if ($producto['activo'] == 1): ?>
+                                <div class="absolute top-2 right-2 flex flex-col gap-2 z-10">
+                                    <button
+                                        class="btn-modificar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
+                                        data-id="<?php echo $producto['id_producto']; ?>">
+                                        <span class="material-symbols-outlined text-lg">edit</span>
+                                    </button>
+                                    <button
+                                        class="btn-borrar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
+                                        data-id="<?php echo $producto['id_producto']; ?>">
+                                        <span class="material-symbols-outlined text-lg">delete</span>
+                                    </button>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($producto['activo'] == 0): ?>
+                                <div class="absolute top-2 right-2 flex flex-col gap-2 z-10">
+                                    <button
+                                        class="btn-restaurar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
+                                        data-id="<?php echo $producto['id_producto']; ?>">
+                                        <span class="material-symbols-outlined text-lg">edit</span>
+                                    </button>
+                                    <button
+                                        class="btn-definitivo bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
+                                        data-id="<?php echo $producto['id_producto']; ?>">
+                                        <span class="material-symbols-outlined text-lg">delete</span>
+                                    </button>
+                                </div>
+                            <?php endif; ?>
+
+
+
                         </div>
 
                         <div class="px-3 py-1 flex flex-col flex-1">
@@ -323,12 +349,16 @@
     <!-- Modal Includes -->
     <?php require_once 'registrar_producto.php'; ?>
     <?php require_once 'registrar_categoria.php'; ?>
+    <?php require_once 'borro_definitivo.php'; ?>
+    <?php require_once 'restaurar_producto.php'; ?>
 
     <!-- Scripts -->
     <script src="modal_editar.js"></script>
     <script src="activar_registrar.js"></script>
     <script src="activar_categoria.js"></script>
     <script src="soft_delete.js"></script>
+    <script src="borro_definitivo.js"></script>
+    <script src="restaurar_producto.js"></script>
 </body>
 
 </html>

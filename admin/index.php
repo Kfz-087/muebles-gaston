@@ -16,7 +16,6 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
 
 $usuario = $_SESSION['usuario'];
 
-echo "$usuario ";
 ?>
 
 <?php
@@ -108,10 +107,12 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
     <div style="display: flex; flex-direction: column; min-height: 100vh;">
         <!-- TopAppBar -->
         <div class="home-header">
+
             <div style="display: flex; align-items: center; width: 3rem;">
                 <span class="app-icon" style="font-size: 1.5rem;">menu</span>
             </div>
-            <h2 class="brand-title">Muebles Gastón</h2>
+            <?php echo "<h3 class='brand-title'>Hola, $usuario </h3>"; ?>
+
             <div style="width: 3rem; display: flex; justify-content: flex-end;">
                 <button id="carrito" class="btn-icon" style="padding: 0;">
                     <span class="app-icon" style="font-size: 1.5rem;">shopping_cart</span>
@@ -122,7 +123,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         <!-- HeaderImage / Hero -->
         <div class="hero-container">
             <div class="hero-card" data-alt="High quality bulk burger patties and premium hot dog ingredients"
-                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2L-etsCy75P6zISCdvSRFFFXyJNZaFKGjpyG5E4n9v_FuaahVLUxAfmOyCaGnRUAPZuwZ_lujS0ZLcR5YTslbuBmKbBSNYw1Xzo7tCmJGD_Wdp0FV3i7H444-SJvCXimLtZP9tzoN5UukUnu25MSkWJfkYoM5qB8qwkGpCGn4s0tbT3WgqeadhJJY33tb5G5veLkbhRJyv9fIYApq53aiTcDGLWvczMG5Ea1_ZjpGqVi50CqGZFipQjrRYJN0MV6fIbOMkQZmWYWN");'>
+                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoMNm0UEcqkvYfPDfPRvoHKQ3V16lDIdRikg&s");'>
                 <div class="hero-content">
                     <p class="hero-title">Tu Proveedor de Confianza</p>
                     <p class="hero-subtitle">Suministro mayorista de alta calidad.</p>
