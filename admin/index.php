@@ -125,19 +125,17 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
             <div class="hero-card" data-alt="High quality bulk burger patties and premium hot dog ingredients"
                 style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoMNm0UEcqkvYfPDfPRvoHKQ3V16lDIdRikg&s");'>
                 <div class="hero-content">
-                    <p class="hero-title">Tu Proveedor de Confianza</p>
-                    <p class="hero-subtitle">Suministro mayorista de alta calidad.</p>
+                    <p class="hero-title">Tu Carpintero de Confianza</p>
+                    <p class="hero-subtitle">Los Mejores muebles de la argentina</p>
                 </div>
             </div>
         </div>
 
         <!-- Headline & Who We Are -->
         <div class="info-section">
-            <h3 class="section-headline">Distribución Mayorista Premium</h3>
+            <h3 class="section-headline"> Servicios de carpintería de la más alta calidad </h3>
             <p class="section-desc">
-                Somos líderes en el suministro de insumos para hamburgueserías y cadenas de comida rápida. Nos
-                especializamos en logística B2B con calidad garantizada en cada bulto.
-            </p>
+                Más de 20 años de experencia en el armado de muebles
         </div>
 
         <!-- SectionHeader: Productos Estrella -->
@@ -148,21 +146,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-        <div class="scroll-container" style="padding: 0 1rem 0.5rem 1rem;">
-            <?php
-            $currentCategory = isset($_GET['categoria']) ? $_GET['categoria'] : 'Todos';
-            $categories = ['Todos', 'hamburguesas' => 'Hamburguesas', 'pan_hamburguesas' => 'Pan de Hamburguesas', 'pan_panchos' => 'Pan de Panchos', 'salchichas' => 'Salchichas', 'aderezos' => 'Aderezos', 'bebidas' => 'Bebidas'];
 
-            foreach ($categories as $cat):
-                $isActive = ($currentCategory === $cat) ? 'active' : '';
-                $url = ($cat === 'Todos') ? 'index.php' : 'index.php?categoria=' . urlencode($cat);
-                ?>
-                <a href="<?php echo $url; ?>" class="category-btn <?php echo $isActive; ?>"
-                    style="text-decoration: none; color: white; display: inline-flex;">
-                    <p><?php echo htmlspecialchars($cat); ?></p>
-                </a>
-            <?php endforeach; ?>
-        </div>
         <?php
         // require_once __DIR__ . '/../includes/products.php';  
         require_once __DIR__ . '/../config/conexion.php';
