@@ -64,7 +64,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Distribuidora ProViveres - Inicio</title>
+    <title>Gastón Carpintería y Diseño</title>
     <!-- Link to our Semantic CSS -->
     <link href="styles.css" rel="stylesheet" />
 
@@ -239,7 +239,19 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         </a>
         <a href="catalogo/index.php" class="nav-item">
             <span class="app-icon">grid_view</span>
-            <spa n class="nav-label">Catálogo</span>
+            <span class="nav-label">Catálogo</span>
+        </a>
+        <a href="taller/index.php" class="nav-item">
+            <span class="app-icon">build</span>
+            <span class="nav-label">Taller</span>
+        </a>
+        <a href="multimedia/index.php" class="nav-item">
+            <span class="app-icon">image</span>
+            <span class="nav-label">Multimedia</span>
+        </a>
+        <a href="contactos/index.php" class="nav-item">
+            <span class="app-icon">contacts</span>
+            <span class="nav-label">Contactos</span>
         </a>
         <!-- <a href="pedidos/index.php" class="nav-item">
             <span class="app-icon">receipt_long</span>

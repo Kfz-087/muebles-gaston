@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="catalogo.css">
+    <link rel="stylesheet" href="../styles.css">
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -107,7 +108,7 @@
         </div>
 
         <!-- Category Filters -->
-        <div class="flex gap-3 p-4 overflow-x-auto hide-scrollbar whitespace-collapse:collapse">
+        <div class="flex gap-3 p-4 overflow-x-auto scrollbar whitespace-collapse:collapse">
             <?php
             require_once __DIR__ . '/../../config/conexion.php';
             $conn = conectar();
@@ -261,12 +262,12 @@
                         </div>
 
                         <div class="px-3 py-1 flex flex-col flex-1">
-                            <p class="text-[#1c190d] dark:text-white text-sm font-bold leading-tight line-clamp-2">
+                            <!-- <p class="text-[#1c190d] dark:text-white text-sm font-bold leading-tight line-clamp-2">
                                 <?php echo htmlspecialchars($producto['nombre']); ?>
-                            </p>
-                            <p class="text-[#9c8e49] text-[11px] font-semibold mt-1 line-clamp-1">
+                            </p> -->
+                            <!-- <p class="text-[#9c8e49] text-[11px] font-semibold mt-1 line-clamp-1">
                                 <?php echo htmlspecialchars($producto['descripcion']); ?>
-                            </p>
+                            </p> -->
                             <!-- <div class="mt-2 mb-3">
                                 <p class="text-[#1c190d] dark:text-white text-lg font-extrabold leading-none">
                                     $<?php echo ($producto['precio']); ?></p>
@@ -396,36 +397,49 @@
         </script>
 
 
-        <!-- Sticky Footer / Bottom Nav -->
-        <div
-            class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-[#1a180b]/95 backdrop-blur-md border-t border-[#e8e4d8] dark:border-[#3d3920] h-20 px-6 flex justify-between items-center z-50">
-            <a href="../index.php" class="flex flex-col items-center gap-1 text-[#9c8e49] no-underline">
-                <span class="material-symbols-outlined">home</span>
-                <span class="text-[10px] font-bold uppercase tracking-tight">Inicio</span>
+        <!--        Bottom Navigation Spacer -->
+        <div style="height: 6rem;"></div>
+
+        <!--    Sticky Footer / Bottom Nav -->
+        <div class="bottom-nav">
+            <a href="../index.php" class="nav-item ">
+                <span class="app-icon" style="font-variation-settings: 'FILL' 1;">home</span>
+                <span class="nav-label">Inicio</span>
             </a>
-            <a href="index.php" class="flex flex-col items-center gap-1 text-black dark:text-primary no-underline">
-                <span class="material-symbols-outlined fill-current"
-                    style="font-variation-settings: 'FILL' 1">inventory_2</span>
-                <span class="text-[10px] font-bold uppercase tracking-tight">Catálogo</span>
+            <a href="index.php" class="nav-item active">
+                <span class="app-icon">grid_view</span>
+                <span class="nav-label">Catálogo</span>
             </a>
-            <!-- <form action="../pedidos/index.php" method="post" class="m-0">
-                <button type="submit"
-                    class="flex flex-col items-center gap-1 text-[#9c8e49] bg-transparent border-none p-0">
-                    <input type="hidden" name="usuario"
-                        value="<?php echo isset($usuario) ? $usuario['usuario'] : ''; ?>">
-                    <span class="material-symbols-outlined">receipt_long</span>
-                    <span class="text-[10px] font-bold uppercase tracking-tight">Pedidos</span>
-                </button>
-            </form>
-            <form action="../perfil/index.php" method="post" class="m-0">
-                <button type="submit"
-                    class="flex flex-col items-center gap-1 text-[#9c8e49] bg-transparent border-none p-0">
-                    <input type="hidden" name="usuario"
-                        value="<?php echo isset($usuario) ? $usuario['usuario'] : ''; ?>">
-                    <span class="material-symbols-outlined">person</span>
-                    <span class="text-[10px] font-bold uppercase tracking-tight">Perfil</span>
-                </button>
-            </form> -->
+            <a href="taller/index.php" class="nav-item">
+                <span class="app-icon">build</span>
+                <span class="nav-label">Taller</span>
+            </a>
+            <a href="multimedia/index.php" class="nav-item">
+                <span class="app-icon">image</span>
+                <span class="nav-label">Multimedia</span>
+            </a>
+            <a href="contactos/index.php" class="nav-item">
+                <span class="app-icon">contacts</span>
+                <span class="nav-label">Contactos</span>
+            </a>
+            <!-- <a href="pedidos/index.php" class="nav-item">
+            <span class="app-icon">receipt_long</span>
+            <span class="nav-label">Pedidos</span>
+        </a>
+        <form action="clientes/index.php" method="post">
+            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
+            <button type="submit" class="nav-item">
+                <span class="app-icon">people</span>
+                <span class="nav-label">Clientes</span>
+            </button>
+        </form>
+        <form action="perfil/index.php" method="post">
+            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
+            <button type="submit" class="nav-item">
+                <span class="app-icon">person</span>
+                <span class="nav-label">Perfil</span>
+            </button>
+        </form> -->
         </div>
     </div>
 
