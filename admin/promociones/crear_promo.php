@@ -11,7 +11,7 @@ $valor_descuento = floatval($_POST['valor_descuento']);
 $precio_regular = floatval($_POST['precio_regular']);
 $tipo_descuento = $_POST['tipo_descuento'];
 
-$tipos = ["porcentaje", "monto_fijo", "2x1"];
+$tipos = ["porcentaje", "monto_fijo", "2x1", "cuotas"];
 if (!in_array($tipo_descuento, $tipos)) {
     die("Tipo de descuento inválido");
 }
@@ -26,6 +26,9 @@ if ($tipo_descuento == "porcentaje") {
 } elseif ($tipo_descuento == "2x1") {
     // Ejemplo: 2x1 significa que llevas 2 por el precio de 1, es decir, 50% de descuento por unidad
     $precio_promocional = $precio_regular / 2;
+} elseif ($tipo_descuento == "cuotas") {
+    // Ejemplo: 3 cuotas sin interés -> Precio Promo = 100
+    $precio_promocional = $precio_regular;
 }
 
 // Asegurar que no sea negativo

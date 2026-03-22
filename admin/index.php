@@ -41,7 +41,8 @@ $sql3 = "SELECT
             p.id_promocion, 
             p.nombre, 
             p.descripcion, 
-            p.tipo_descuento, 
+            p.tipo_descuento,
+            p.valor_descuento, 
             p.fecha_inicio, 
             p.fecha_fin,
             p.activa,
@@ -77,6 +78,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         rel="stylesheet" />
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="promociones/modal_promos.css">
 
 </head>
 <script id="tailwind-config">
@@ -142,6 +144,9 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         <div class="section-header-row">
             <h2 class="section-title">Nuestras Promociones </h2>
             <span class="link-action">Ver Todo</span>
+            <button id="crear_promocion" class="btn-icon" style="padding: 0; background-color: var(--primary);">
+                <span class="material-symbols-outlined" style="font-size: 1.5rem;">add</span>
+            </button>
         </div>
 
 
@@ -157,13 +162,16 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
             echo " <div class='product-card-vertical'> ";
             echo " <div class='product-image-container'>
                 <img src='" . ($promocion['imagen_referencia']) . "' style='width: 100%; height: 100%; object-fit: cover;'>";
-            $badge_text = ucfirst(str_replace('_', ' ', $promocion['tipo_descuento']));
-            echo "<span class='badge-overlay'>$badge_text</span>";
-
+            if ($promocion['tipo_descuento'] == 'cuotas') {
+                echo "<span class='badge-overlay'> " . $promocion['valor_descuento'] . " Cuotas</span>";
+            } else {
+                $badge_text = ucfirst(str_replace('_', ' ', $promocion['tipo_descuento']));
+                echo "<span class='badge-overlay'>$badge_text</span>";
+            }
             echo " </div> ";
             echo " <div class='product-info-vertical'> ";
             echo " <p class='product-title-sm'>$promocion[nombre]</p> ";
-            echo " <p class='product-meta' style='font-size: 0.8rem; color: #666;'>Incluye: $promocion[productos_nombres]</p> ";
+            // echo " <p class='product-meta' style='font-size: 0.8rem; color: #666;'>Incluye: $promocion[productos_nombres]</p> ";
             echo " <p class='product-meta'>$promocion[descripcion]</p> ";
             echo " <div class='price-row'> ";
             echo " <p class='price-main' style='color: var(--primary); font-weight: bold;'>¡Oferta!</p> ";
@@ -280,6 +288,12 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         }
     </script>
 
+    <?php
+
+    require_once __DIR__ . '/promociones/registrar_promo.php';
+    ?>
+
+    <script src="promociones/modal_registrar.js"></script>
 </body>
 
 

@@ -166,7 +166,7 @@ $conn = conectar();
             </a>
             <!-- WhatsApp -->
             <a class="group relative flex items-center justify-between w-full p-5 bg-whatsapp text-on-surface border-2 border-on-surface rounded-xl transition-all duration-200 active:scale-95 shadow-sm"
-                href="#">
+                href="https://wa.me/5491170580790" target="_blank">
                 <div class="flex items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <path fill="#ffffff"

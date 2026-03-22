@@ -1,0 +1,188 @@
+/* Modal Backdrop Overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Container */
+.modal-container {
+    position: absolute;
+    top: 10%;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow-y: auto;
+}
+
+.dark .modal-container {
+    background-color: #221f10;
+    color: #ffffff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Section */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1c190d;
+    margin: 0;
+}
+
+.dark .modal-header h3 {
+    color: #ffffff;
+}
+
+.close-modal {
+    background: transparent;
+    border: none;
+    color: #9c8e49;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.close-modal:hover {
+    background-color: rgba(156, 142, 73, 0.1);
+}
+
+/* Form Styles */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal-form label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b4b4b;
+}
+
+.dark .modal-form label {
+    color: #d1d1d1;
+}
+
+.modal-form input,
+.modal-form select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e8e4d8;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dark .modal-form input,
+.dark .modal-form select {
+    background-color: #322e1a;
+    border-color: #3d3920;
+    color: #ffffff;
+}
+
+.modal-form input:focus,
+.modal-form select:focus {
+    border-color: rgb(124, 61, 50);
+    box-shadow: 0 0 0 3px rgba(124, 61, 50, 0.1);
+}
+
+/* Products Container */
+#contenedor_productos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.producto-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.producto-item select {
+    flex: 1;
+}
+
+.btn-remove-product {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark .btn-remove-product {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Button Styles */
+.btn-primary-modal {
+    background-color: rgb(124, 61, 50);
+    color: white;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-primary-modal:active {
+    transform: scale(0.98);
+}
+
+.btn-primary-modal:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary-modal {
+    background-color: transparent;
+    color: rgb(124, 61, 50);
+    padding: 0.5rem;
+    border: 2px solid rgb(124, 61, 50);
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary-modal:hover {
+    background-color: rgba(124, 61, 50, 0.05);
+}
