@@ -372,11 +372,11 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             <span class="app-icon" style="font-variation-settings: 'FILL' 1;">home</span>
             <span class="nav-label">Inicio</span>
         </a>
-        <a href="catalogo/index.php" class="nav-item">
+        <a href="../catalogo/index.php" class="nav-item">
             <span class="app-icon">grid_view</span>
             <span class="nav-label">Catálogo</span>
         </a>
-        <a href="taller/index.php" class="nav-item">
+        <a href="../taller/index.php" class="nav-item">
             <span class="app-icon">build</span>
             <span class="nav-label">Taller</span>
         </a>
@@ -384,7 +384,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             <span class="app-icon">image</span>
             <span class="nav-label">Multimedia</span>
         </a>
-        <a href="contactos/index.php" class="nav-item">
+        <a href="../contactos/index.php" class="nav-item">
             <span class="app-icon">contacts</span>
             <span class="nav-label">Contactos</span>
         </a>

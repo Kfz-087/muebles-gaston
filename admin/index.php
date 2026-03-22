@@ -230,10 +230,12 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
                 width="100%" height="450" style="border:5px solid #ccc;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <button class="btn-contact">
-            <span class="app-icon">chat_bubble</span>
-            Contáctanos
-        </button>
+        <a href="contactos/index.php" target="_blank">
+            <button class="btn-contact">
+                <span class="app-icon">chat_bubble</span>
+                Contáctanos
+            </button>
+        </a>
     </div>
 
     <!--        Bottom Navigation Spacer -->

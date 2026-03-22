@@ -410,15 +410,15 @@
                 <span class="app-icon">grid_view</span>
                 <span class="nav-label">Catálogo</span>
             </a>
-            <a href="taller/index.php" class="nav-item">
+            <a href="../taller/index.php" class="nav-item">
                 <span class="app-icon">build</span>
                 <span class="nav-label">Taller</span>
             </a>
-            <a href="multimedia/index.php" class="nav-item">
+            <a href="../multimedia/index.php" class="nav-item">
                 <span class="app-icon">image</span>
                 <span class="nav-label">Multimedia</span>
             </a>
-            <a href="contactos/index.php" class="nav-item">
+            <a href="../contactos/index.php" class="nav-item">
                 <span class="app-icon">contacts</span>
                 <span class="nav-label">Contactos</span>
             </a>

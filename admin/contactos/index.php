@@ -22,7 +22,7 @@ $conn = conectar();
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Amber Obsidian | Profile</title>
+    <title>Gastón Carpintería y Diseño | Contactos </title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -72,9 +72,9 @@ $conn = conectar();
                         "primary-fixed": "#ffe16e",
                         "primary": "rgb(124, 61, 50)",
                         "surface": "#f8f8f5",
-                        "instagram": "#E1306C",
+                        "instagram": "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
                         "whatsapp": "#25D366",
-                        "facebook": "#1877F2",
+                        "facebook": "#104b99ff",
                         "gmail": "#DB4437",
                         "on-secondary-container": "#f2cc0d",
                         "secondary-container": "#1e293b",
@@ -98,6 +98,13 @@ $conn = conectar();
                     },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
+                hover: {
+                    "instagram": "#E1306C",
+                    "whatsapp": "#25D366",
+                    "facebook": "#104b99ff",
+                    "gmail": "#DB4437",
+                    "translate": "translateY(-5px)",
+                }
             },
         }
     </script>
@@ -155,8 +162,8 @@ $conn = conectar();
         <!-- Action Links Vertical Stack -->
         <div class="flex flex-col gap-4">
             <!-- Instagram -->
-            <a class="group relative flex items-center justify-between w-full p-5 bg-instagram text-on-primary rounded-xl transition-all duration-200 active:scale-95 shadow-sm"
-                href="#">
+            <a class="group relative flex items-center justify-between w-full p-5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-on-primary rounded-xl transition-all duration-200 active:scale-95 shadow-sm hover:translate-y-[-5px]"
+                href="https://www.instagram.com/gaston.rostro?igsh=MWNhc2F5eWVkNTVrMQ==" target="_blank">
                 <div class="flex items-center gap-4">
                     <span class="material-symbols-outlined text-2xl" data-icon="camera_alt"> camera_alt</span>
                     <span class="font-bold tracking-tight text-sm uppercase">Instagram</span>
@@ -164,9 +171,12 @@ $conn = conectar();
                 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity"
                     data-icon="north_east">north_east</span>
             </a>
+
+
+
             <!-- WhatsApp -->
-            <a class="group relative flex items-center justify-between w-full p-5 bg-whatsapp text-on-surface border-2 border-on-surface rounded-xl transition-all duration-200 active:scale-95 shadow-sm"
-                href="https://wa.me/5491170580790" target="_blank">
+            <a class="group relative flex items-center justify-between w-full p-5 bg-whatsapp text-on-surface border-2 border-on-surface rounded-xl transition-all duration-200 active:scale-95 shadow-sm hover:translate-y-[-5px]"
+                href="https://wa.me/5491169794003" target="_blank" title="Chatear por WhatsApp" id="wsp-btn">
                 <div class="flex items-center gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
                         <path fill="#ffffff"
@@ -177,8 +187,10 @@ $conn = conectar();
                 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity"
                     data-icon="north_east">north_east</span>
             </a>
+
+
             <!-- Email -->
-            <a class="group relative flex items-center justify-between w-full p-5 bg-gmail text-primary rounded-xl transition-all duration-200 active:scale-95 shadow-lg"
+            <a class="group relative flex items-center justify-between w-full p-5 bg-gmail text-primary rounded-xl transition-all duration-200 active:scale-95 shadow-lg hover:translate-y-[-5px]"
                 href="#">
                 <div class="flex items-center gap-4">
                     <span class="material-symbols-outlined text-2xl" data-icon="mail">mail</span>
@@ -187,8 +199,10 @@ $conn = conectar();
                 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity"
                     data-icon="north_east">north_east</span>
             </a>
-            <!-- LinkedIn -->
-            <a class="group relative flex items-center justify-between w-full p-5 bg-facebook text-on-primary rounded-xl transition-all duration-200 active:scale-95 shadow-sm"
+
+
+            <!-- FaceBook-->
+            <a class="group relative flex items-center justify-between w-full p-5 bg-facebook text-on-primary rounded-xl transition-all duration-200 active:scale-95 shadow-sm hover:translate-y-[-5px]"
                 href="#">
                 <div class="flex items-center gap-4">
                     <span class="material-symbols-outlined text-2xl" data-icon="facebook">
@@ -197,13 +211,13 @@ $conn = conectar();
                                 d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02" />
                         </svg>
                     </span>
-                    <span class="font-bold tracking-tight text-sm uppercase">Facebook </span>
+                    <span class="font-bold tracking-tight color-white text-sm uppercase">Facebook </span>
                 </div>
                 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity"
                     data-icon="north_east">north_east</span>
             </a>
             <!-- Portfolio -->
-            <a class="group relative flex items-center justify-between w-full p-5 bg-surface-container-low text-on-surface border-2 border-on-surface rounded-xl transition-all duration-200 active:scale-95 shadow-sm"
+            <!-- <a class="group relative flex items-center justify-between w-full p-5 bg-surface-container-low text-on-surface border-2 border-on-surface rounded-xl transition-all duration-200 active:scale-95 shadow-sm"
                 href="#">
                 <div class="flex items-center gap-4">
                     <span class="material-symbols-outlined text-2xl" data-icon="language">language</span>
@@ -211,10 +225,10 @@ $conn = conectar();
                 </div>
                 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity"
                     data-icon="north_east">north_east</span>
-            </a>
+            </a> -->
         </div>
         <!-- Metric Cluster (Bento Style) -->
-        <div class="grid grid-cols-2 gap-4 mt-10">
+        <!-- <div class="grid grid-cols-2 gap-4 mt-10">
             <div class="bg-surface-container p-5 rounded-xl border-l-4 border-primary">
                 <span
                     class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-1">Network</span>
@@ -226,7 +240,7 @@ $conn = conectar();
                     <span class="w-2 h-2 bg-primary rounded-full"></span> Available
                 </span>
             </div>
-        </div>
+        </div> -->
     </main>
     <!--        Bottom Navigation Spacer -->
     <div style="height: 6rem;"></div>
