@@ -120,16 +120,17 @@ $currentCategory = isset($_GET['categoria']) ? $_GET['categoria'] : 'Todos';
                 </button>
             </div>
             
-            <form action="index.php" method="get" class="flex-1 overflow-y-auto p-4 flex flex-col gap-6">
-                <input type="hidden" name="categoria" value="<?php echo htmlspecialchars($currentCategory); ?>">
-                <input type="hidden" name="search_input" value="<?php echo htmlspecialchars(isset($_GET['search_input']) ? $_GET['search_input'] : ''); ?>">
+            <form action="index.php" method="get" class="flex-1 flex flex-col overflow-hidden">
+                <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-6">
+                    <input type="hidden" name="categoria" value="<?php echo htmlspecialchars($currentCategory); ?>">
+                    <input type="hidden" name="search_input" value="<?php echo htmlspecialchars(isset($_GET['search_input']) ? $_GET['search_input'] : ''); ?>">
 
-                <!-- Color Filter -->
-                <div>
-                    <h4 class="text-sm font-bold text-[#9c8e49] uppercase tracking-wider mb-3">Tono de Color</h4>
-                    <div class="grid grid-cols-1 gap-2">
-                        <?php 
-                        $colores = [
+                    <!-- Color Filter -->
+                    <div>
+                        <h4 class="text-sm font-bold text-[#9c8e49] uppercase tracking-wider mb-3">Tono de Color</h4>
+                        <div class="grid grid-cols-1 gap-2">
+                            <?php 
+                            $colores = [
                             "Blanco" => "#FFFFFF", 
                             "Gris" => "#808080", 
                             "Negro" => "#000000", 
@@ -192,9 +193,10 @@ $currentCategory = isset($_GET['categoria']) ? $_GET['categoria'] : 'Todos';
                         endforeach; 
                         ?>
                     </select>
+                    </div>
                 </div>
 
-                <div class="mt-auto pt-6 flex gap-3">
+                <div class="p-4 border-t border-[#e8e4d8] dark:border-[#3d3920] flex gap-3 bg-background-light dark:bg-background-dark">
                     <a href="index.php?categoria=<?php echo urlencode($currentCategory); ?>" class="flex-1 h-12 flex items-center justify-center rounded-xl border border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold">Limpiar</a>
                     <button type="submit" class="flex-[2] h-12 bg-primary text-white rounded-xl text-sm font-bold shadow-lg shadow-primary/20">Aplicar Filtros</button>
                 </div>

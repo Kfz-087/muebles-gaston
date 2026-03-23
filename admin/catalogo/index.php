@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Catálogo de Productos - Admin</title>
+    <meta property="og:title" content="<?php echo htmlspecialchars($producto['nombre']); ?>">
+    <meta property="og:description" content="Consultá precio y disponibilidad">
+    <meta property="og:image" content="https://tusitio.com<?php echo $producto['ruta_imagen']; ?>">
+    <meta property="og:url" content="https://tusitio.com/producto.php?id=<?php echo $producto['id']; ?>">
+    <title>Gastón Carpintería y Diseño | Catálogo</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
         rel="stylesheet" />
@@ -53,23 +57,24 @@
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden pb-24">
 
         <!-- Sticky Header -->
-        <div
-            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
-            <div class="text-[#1c190d] dark:text-white flex size-12 shrink-0 items-center">
-                <span class="material-symbols-outlined text-2xl">menu</span>
+        <header>
+            <div
+                class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
+                <div class="text-[#1c190d] dark:text-white flex size-12 shrink-0 items-center">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </div>
+                <h2
+                    class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                    Catálogo Admin
+                </h2>
+                <div class="flex w-12 items-center justify-end">
+                    <button
+                        class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#1c190d] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+                        <span id="carrito_boton" class="material-symbols-outlined text-2xl">shopping_cart</span>
+                    </button>
+                </div>
             </div>
-            <h2
-                class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
-                Catálogo Admin
-            </h2>
-            <div class="flex w-12 items-center justify-end">
-                <button
-                    class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#1c190d] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
-                    <span id="carrito_boton" class="material-symbols-outlined text-2xl">shopping_cart</span>
-                </button>
-            </div>
-        </div>
-
+        </header>
         <!-- Search Bar -->
         <div class="px-4 py-3">
             <form action="index.php" method="get" class="w-full flex flex-col gap-3">
@@ -517,7 +522,9 @@
                 <p>Gastón Carpintería y Diseño ofrece muebles de alta calidad con más de 20 años de experiencia.</p>
             </div>
             <div class="footer-section">
-                <h3>Contacto</h3>
+                <a href="../contactos/index.php">
+                    <h3>Contactos</h3>
+                </a>
                 <p>Email: [EMAIL_ADDRESS]</p>
                 <p>Teléfono: +54 9 11 1234-5678</p>
             </div>

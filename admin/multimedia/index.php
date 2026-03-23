@@ -212,12 +212,16 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
     <!-- TopAppBar -->
     <header
         class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
-        <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-amber-400 dark:text-amber-400 active:scale-95 duration-200"
-                data-icon="factory">factory</span>
-            <h1
-                class="font-['Work_Sans'] font-bold tracking-tight uppercase text-lg font-black tracking-tighter text-slate-900 dark:text-white">
-                PRODUCTION_INDEX</h1>
+        <div
+            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
+            <div class="text-[#1c190d] dark:text-white flex size-12 shrink-0 items-center">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </div>
+            <div
+                class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Multimedia
+            </div>
+
         </div>
         <button
             class="btn-abrir-modal-registro material-symbols-outlined text-amber-400 dark:text-amber-400 hover:opacity-80 transition-opacity active:scale-95 duration-200"
