@@ -179,6 +179,11 @@
     overflow-y: auto;
 }
 
+
+
+
+
+
 .footer {
     background-color: #1e293b;
     color: #fff;
@@ -206,10 +211,21 @@
 
 .social-links {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.social-links a {
+.social-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
     color: #fff;
     font-size: 1.2rem;
 }

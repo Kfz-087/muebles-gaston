@@ -238,24 +238,6 @@ $conn = conectar();
                 <span class="app-icon">contacts</span>
                 <span class="nav-label">Contactos</span>
             </a>
-            <!-- <a href="pedidos/index.php" class="nav-item">
-            <span class="app-icon">receipt_long</span>
-            <span class="nav-label">Pedidos</span>
-        </a>
-        <form action="clientes/index.php" method="post">
-            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
-            <button type="submit" class="nav-item">
-                <span class="app-icon">people</span>
-                <span class="nav-label">Clientes</span>
-            </button>
-        </form>
-        <form action="perfil/index.php" method="post">
-            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
-            <button type="submit" class="nav-item">
-                <span class="app-icon">person</span>
-                <span class="nav-label">Perfil</span>
-            </button>
-        </form> -->
         </div>
         </div>
     </nav>

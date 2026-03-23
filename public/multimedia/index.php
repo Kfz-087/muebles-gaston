@@ -232,9 +232,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
         </div>
-        <button
-            class="btn-abrir-modal-registro material-symbols-outlined text-amber-400 dark:text-amber-400 hover:opacity-80 transition-opacity active:scale-95 duration-200"
-            data-icon="upload">upload</button>
+
     </header>
     <main class="pt-20 px-4 max-w-7xl mx-auto">
         <!-- Search and Filter Section -->
@@ -242,9 +240,10 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             <div class="relative group">
                 <span
                     class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-                <input
+                <input id="search-input"
                     class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary text-on-surface font-medium placeholder:text-on-surface-variant/50"
-                    placeholder="Search workshop projects..." type="text" />
+                    placeholder="Search workshop projects..." type="text"
+                    value="<?php echo htmlspecialchars(isset($_GET['search_input']) ? $_GET['search_input'] : ''); ?>" />
             </div>
             <div class="flex gap-2 mt-4 overflow-x-auto pb-2 scrollbar-hide">
                 <a href="index.php"
@@ -276,7 +275,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
 
 
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php if (count($archivos) > 0): ?>
                 <?php foreach ($archivos as $archivo): ?>
                     <?php
@@ -324,19 +323,10 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
                                     title="<?php echo $nombreCorto; ?>">
                                     <?php echo $nombreCorto; ?>
                                 </h3>
-                                <div class="flex gap-2">
-                                    <button
-                                        class="btn-modificar material-symbols-outlined text-amber-400 hover:text-white transition-colors"
-                                        data-id="<?php echo $archivo['id_multimedia']; ?>" data-icon="edit">edit</button>
-                                    <button
-                                        class="btn-borrar material-symbols-outlined text-red-500 hover:text-red-400 transition-colors"
-                                        data-id="<?php echo $archivo['id_multimedia']; ?>" data-icon="delete">delete</button>
-                                </div>
+
                             </div>
                             <div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
-                                <span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">
-                                    <?php echo date('M d, Y', strtotime($archivo['fecha_subida'])); ?>
-                                </span>
+
                                 <a href="<?php echo $rutaArchivo; ?>" target="_blank"
                                     class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
                                     VER <span class="material-symbols-outlined text-sm"
@@ -364,12 +354,6 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-    <!-- Floating Action Button -->
-    <button
-        class="btn-abrir-modal-registro fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-transform">
-        <span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
-    </button>
-
 
 
 
@@ -389,7 +373,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             <span class="app-icon">grid_view</span>
             <span class="nav-label">Catálogo</span>
         </a>
-        <a href="index.php" class="nav-item active">
+        <a href="multimedia/index.php" class="nav-item active">
             <span class="app-icon">image</span>
             <span class="nav-label">Multimedia</span>
         </a>
@@ -397,37 +381,29 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             <span class="app-icon">contacts</span>
             <span class="nav-label">Contactos</span>
         </a>
-        <!-- <a href="pedidos/index.php" class="nav-item">
-            <span class="app-icon">receipt_long</span>
-            <span class="nav-label">Pedidos</span>
-        </a>
-        <form action="clientes/index.php" method="post">
-            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
-            <button type="submit" class="nav-item">
-                <span class="app-icon">people</span>
-                <span class="nav-label">Clientes</span>
-            </button>
-        </form>
-        <form action="perfil/index.php" method="post">
-            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
-            <button type="submit" class="nav-item">
-                <span class="app-icon">person</span>
-                <span class="nav-label">Perfil</span>
-            </button>
-        </form> -->
+
     </div>
     </div>
 
-    <!-- Modals -->
-    <?php require_once("modales/registrar_multimedia.php"); ?>
 
-    <!-- Modal genérico para edición dinamica de modal_editar.js -->
-    <div id="modal_editar" class="modal-editar"></div>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const galleryGrid = document.getElementById('gallery-grid');
+        const currentTipo = '<?php echo $tipo; ?>';
 
-    <script src="scripts/activar_registrar.js?v=<?php echo time(); ?>"></script>
-    <script src="scripts/modal_editar.js?v=<?php echo time(); ?>"></script>
-    <script src="scripts/soft_delete.js?v=<?php echo time(); ?>"></script>
-
+        if (searchInput && galleryGrid) {
+            searchInput.addEventListener('input', function() {
+                const term = this.value;
+                fetch(`backend/search.php?term=${encodeURIComponent(term)}&tipo=${encodeURIComponent(currentTipo)}`)
+                    .then(response => response.text())
+                    .then(html => {
+                        galleryGrid.innerHTML = html;
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
+                    })
+                    .catch(err => console.error('Error en búsqueda multimedia:', err));
+            });
+        }
+    </script>
     <script>
         console.log("[DEBUG-INLINE] Verificando elementos...");
         console.log("[DEBUG-INLINE] Botones registrar:", document.querySelectorAll(".btn-abrir-modal-registro").length);

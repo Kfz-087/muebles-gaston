@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Production Index | Multimedia Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#1e293b",
+              "primary-container": "#f2cc0d",
+              "outline-variant": "#cbd5e1",
+              "outline": "#e2e8f0",
+              "surface": "#f8f8f5",
+              "on-primary-container": "#685700",
+              "tertiary-fixed-dim": "#50d6f6",
+              "inverse-surface": "#1e293b",
+              "on-tertiary-fixed": "#001f26",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#544606",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#475569",
+              "primary-fixed": "#ffe16e",
+              "surface-container-highest": "#eae2d0",
+              "primary": "#f2cc0d",
+              "on-surface": "#0f172a",
+              "inverse-primary": "#e9c400",
+              "surface-dim": "#e1d9c8",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#f2cc0d",
+              "background": "#f8f8f5",
+              "tertiary": "#00687b",
+              "secondary-fixed-dim": "#dac67c",
+              "secondary-fixed": "#f8e295",
+              "on-primary": "#0f172a",
+              "on-tertiary-fixed-variant": "#004e5d",
+              "on-error": "#ffffff",
+              "secondary": "#0f172a",
+              "surface-container-high": "#f0e7d6",
+              "inverse-on-surface": "#f8f0de",
+              "surface-container-low": "#ffffff",
+              "primary-fixed-dim": "#e9c400",
+              "on-primary-fixed-variant": "#544600",
+              "on-error-container": "#93000a",
+              "surface-variant": "#eae2d0",
+              "surface-bright": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#006172",
+              "surface-container": "#f5eddb",
+              "tertiary-container": "#5bdfff",
+              "on-secondary-fixed": "#221b00",
+              "on-primary-fixed": "#221b00",
+              "tertiary-fixed": "#adecff",
+              "on-background": "#0f172a",
+              "surface-tint": "#705d00"
+            },
+            fontFamily: {
+              "headline": ["Work Sans"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-400 dark:text-amber-400 active:scale-95 duration-200" data-icon="factory">factory</span>
+<h1 class="font-['Work_Sans'] font-bold tracking-tight uppercase text-lg font-black tracking-tighter text-slate-900 dark:text-white">PRODUCTION_INDEX</h1>
+</div>
+<button class="material-symbols-outlined text-amber-400 dark:text-amber-400 hover:opacity-80 transition-opacity active:scale-95 duration-200" data-icon="upload">upload</button>
+</header>
+<main class="pt-20 px-4 max-w-7xl mx-auto">
+<!-- Search and Filter Section -->
+<section class="mt-4 mb-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary text-on-surface font-medium placeholder:text-on-surface-variant/50" placeholder="Search workshop projects..." type="text"/>
+</div>
+<div class="flex gap-2 mt-4 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-secondary text-primary px-4 py-2 rounded-lg text-xs font-bold tracking-widest uppercase flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm" data-icon="all_inclusive">all_inclusive</span> ALL ASSETS
+                </button>
+<button class="bg-surface-container-low text-on-surface-variant outline outline-1 outline-outline px-4 py-2 rounded-lg text-xs font-bold tracking-widest uppercase flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm" data-icon="video_library">video_library</span> VIDEOS
+                </button>
+<button class="bg-surface-container-low text-on-surface-variant outline outline-1 outline-outline px-4 py-2 rounded-lg text-xs font-bold tracking-widest uppercase flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm" data-icon="photo_library">photo_library</span> PHOTOS
+                </button>
+</div>
+</section>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Item 1: Video -->
+<div class="group bg-secondary rounded-xl overflow-hidden shadow-sm flex flex-col h-full border-none">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Industrial metal fabrication workshop interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPmmQQkk3G0EgKEDU-L_mAefw3LSWoKoQuiG98moGi6wsO6Hx0igY6Huy40wIyKMysJaqla_ndX7mrpfQ_EFaydfDzaxFhuWrHC49OPjT7RgUxlC878RcjFSw7LRWILotEqgRxcbvwA_4u3eFaVLnmArhaqe56JQvFPcgc6avt019wRL2-wBuM1IWPpAdlaWd61MofZML8eY07JL6dquzslFJdY0u6d9VmQvBw-dja3vCPXN7wo3h04gZva3gl2aiTLCNiaTlLe-Hw"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-primary text-on-primary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="play_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_circle</span> VIDEO
+                        </span>
+</div>
+<div class="absolute bottom-3 right-3 text-white bg-black/50 px-2 py-1 rounded text-[10px] font-bold">02:45</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold text-lg leading-tight uppercase tracking-tight">Escritorio de Roble en Proceso</h3>
+<span class="material-symbols-outlined text-amber-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OCT 24, 2023</span>
+<button class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
+                            DETALLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Photo -->
+<div class="group bg-secondary rounded-xl overflow-hidden shadow-sm flex flex-col h-full border-none">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of fine woodworking tools and wood shavings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWGTY9lgViHgnqCPyURUnpWexZWQNUa5MJA81K3xWlz7BBZJlh3QEEvIQlyXH2v7TaCVExgsK9BLIrb9gPzRdgRf5SBGmgXCihlvpGOr6EH3uTydt4rFVtxYBADgFqXoiLBejBzsiexL_XxsW4RsxYxlxdXg5CqpGZFriQmnXZOR1q5OtAaspuiEzwcv4mpY4Nc0MtanOxXh4MRDHuaQikHw77NUdi07zvLpVlWwzGXbmym74Y9LNXQ25y0FWDQNf4ZMEPj9SaacdG"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="image">image</span> FOTO
+                        </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold text-lg leading-tight uppercase tracking-tight">Acabado Final Pulido</h3>
+<span class="material-symbols-outlined text-amber-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OCT 22, 2023</span>
+<button class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
+                            DETALLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Photo -->
+<div class="group bg-secondary rounded-xl overflow-hidden shadow-sm flex flex-col h-full border-none">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical blueprint and measuring tools on workshop table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtDA0g9EYZFgkbyoRir7G0wS_qeu14Su8gH2D13EbqjMhxmv4XhLFcFbrrWS0O9sumWrLXWrXSSydB5buDT90B7uIDj-Vv6ziWiX0BxGNulx1hY69h-bl65bGmHUlYh8-rxTXG0_oHPKt_HpbLG8Z6vQnzu64X4d9Qb8B0iK9W5Kq7pQRJg5ET1qqdfwour7mnVZlYp9riotpljhat5yk7pp1EJgTGOxHnq6YcdEZ920TlKnTua65Dds9m9MvS9tiuEGvmm1qZqX4r"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="image">image</span> FOTO
+                        </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold text-lg leading-tight uppercase tracking-tight">Planos Estructura Principal</h3>
+<span class="material-symbols-outlined text-amber-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OCT 20, 2023</span>
+<button class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
+                            DETALLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4: Video -->
+<div class="group bg-secondary rounded-xl overflow-hidden shadow-sm flex flex-col h-full border-none">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="CNC machine cutting precise wood patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB434VHjmoVzEHbIl1VK8nIQb24uSKetn3dn24P3S1Egwe5OhXMJgowe9idtKoc4NhYkryGWDwpg-37wjjr2cra7eVNeUVpNGvYdIx06C2lEiD2Zh0t_1tosdPLu-oQVKfjb5Z5wAJ6LBuf7AJHa28Z9-qVyipQ6KeKgniwlmG2-wqBRsw6jThQNKJa1sNk0r0cxiw4e261dPje7rwZq_d6WD5jKp5O_KhBBMkUyRItETdvVy5t4NY1eRqJ7hZtuRWpZ2vu03nwx9iF"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-primary text-on-primary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="play_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_circle</span> VIDEO
+                        </span>
+</div>
+<div class="absolute bottom-3 right-3 text-white bg-black/50 px-2 py-1 rounded text-[10px] font-bold">01:12</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold text-lg leading-tight uppercase tracking-tight">Corte Láser de Precisión</h3>
+<span class="material-symbols-outlined text-amber-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OCT 15, 2023</span>
+<button class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
+                            DETALLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5: Photo -->
+<div class="group bg-secondary rounded-xl overflow-hidden shadow-sm flex flex-col h-full border-none">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Worker in protective gear welding metal joints" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQC-9OhwvuIO1LC0a0XKIaVymJXsdpQZUOXZr-Ldk_s5xYLeeJvKMSEd9RJVc2IViDb2rD-Leu285i2ihPAyMaqykpyh8tvsw5ZsGHtD9avfwSJ7qLGh8Gpyn-NEjFPVh4Kja5QtbuXVYKP3p8BA_YTFsHHxb3WI5S4do2TsrILQaTByrwjBaS9RcsB7BLS9gywUv7qPOoSB91uVv2N2HRhvunqXitVQ8G5xlWmy-DcKPCq6h5t2zpGRDf8tP-vvxgMtgzYKVh69Ir"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="image">image</span> FOTO
+                        </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold text-lg leading-tight uppercase tracking-tight">Soldadura de Base Metálica</h3>
+<span class="material-symbols-outlined text-amber-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OCT 12, 2023</span>
+<button class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
+                            DETALLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 6: Photo -->
+<div class="group bg-secondary rounded-xl overflow-hidden shadow-sm flex flex-col h-full border-none">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rows of organized material samples and swatches" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChAdH-XsXXDrPlP70fdMbJlMA8iQOtZeDzCFxYI9n6O_jb1vSBbEbfOtY2XrdYi3Cr3jp4vJ50LbVv4UoMs6-v97etbZXubA_51vmvm-a899_6Fo_jK0ldK1Xy7cjkn4_Ikry_rW0arNHVYAckp4vNkc86J7omWFGOntK-dnTP8KqZVLr5he9O9Z2xbeMglwomg4xiX__hPtYDtqh1PXBfqKzJAdrhg0l5rQZ-jGDT1Z4McZ0k2cqb1ZXkrcf-OgQjmO3O85XforP6"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="image">image</span> FOTO
+                        </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold text-lg leading-tight uppercase tracking-tight">Catálogo de Materiales v2</h3>
+<span class="material-symbols-outlined text-amber-400" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-auto flex justify-between items-center pt-4 border-t border-slate-800">
+<span class="text-slate-400 text-[10px] font-bold tracking-widest uppercase">OCT 08, 2023</span>
+<button class="text-primary text-[10px] font-black tracking-widest uppercase flex items-center gap-1 hover:underline">
+                            DETALLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-4 bg-slate-900/80 dark:bg-black/80 backdrop-blur-md z-50 h-20">
+<!-- Gallery (Active) -->
+<a class="flex flex-col items-center justify-center text-amber-400 bg-amber-400/10 rounded-xl px-4 py-1 active:scale-90 duration-150 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold tracking-widest uppercase mt-1">GALLERY</span>
+</a>
+<!-- Progress -->
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 duration-150 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold tracking-widest uppercase mt-1">PROGRESS</span>
+</a>
+<!-- Assets -->
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 duration-150 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold tracking-widest uppercase mt-1">ASSETS</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 duration-150 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Work_Sans'] text-[10px] font-bold tracking-widest uppercase mt-1">SETTINGS</span>
+</a>
+</nav>
+</body></html>

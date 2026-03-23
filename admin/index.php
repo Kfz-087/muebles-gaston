@@ -182,14 +182,14 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <!-- Información y Sucursales Section -->
     <div class="info-box">
-        <h2 class="section-title" style="margin-bottom: 1rem; font-size: 1.25rem;">Información y Sucursales</h2>
+        <h2 class="section-title" style="margin-bottom: 1rem; font-size: 1.25rem;">Información y Ubicación</h2>
         <div style="display: flex; flex-direction: column;">
             <div class="info-row">
                 <span class="app-icon" style="color: var(--color-primary);">location_on</span>
                 <div class="info-content">
-                    <p class="info-title">Sede Central</p>
-                    <p class="info-text">Av. Logística 450, Zona Industrial</p>
-                    <p class="info-sub">Buenos Aires, Argentina</p>
+                    <p class="info-title">Taller</p>
+                    <p class="info-text">Lavalle 5045</p>
+                    <p class="info-sub">Ezpeleta, Quilmes, Pcia. de Buenos Aires</p>
                 </div>
             </div>
             <div class="info-row">
@@ -224,7 +224,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         <!--        Static Map Placeholder -->
         <div class="map-container">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.580512364792!2d-58.32948125625436!3d-34.736069163360064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32be4e427b0e7%3A0x73ae1571d646cdb9!2sCentro%20de%20Formacion%20Laboral%20N%C2%BA402%20%22Fray%20Luis%20Beltr%C3%A1n%22.%20Quilmes!5e0!3m2!1ses-419!2sar!4v1769450216850!5m2!1ses-419!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1159.0256067606088!2d-58.235446608524924!3d-34.75006402844277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32ee1f989fb5f%3A0x7a21caba8d9e2f2!2sLavalle%205045%2C%20B1882%20Ezpeleta%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1774286915998!5m2!1ses-419!2sar"
                 width="100%" height="450" style="border:5px solid #ccc;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -248,10 +248,6 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         <a href="catalogo/index.php" class="nav-item">
             <span class="app-icon">grid_view</span>
             <span class="nav-label">Catálogo</span>
-        </a>
-        <a href="taller/index.php" class="nav-item">
-            <span class="app-icon">build</span>
-            <span class="nav-label">Taller</span>
         </a>
         <a href="multimedia/index.php" class="nav-item">
             <span class="app-icon">image</span>
