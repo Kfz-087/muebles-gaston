@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    die("No autorizado");
+}
+
 require_once __DIR__ . '/../../config/conexion.php';
 
 $nombre = $_POST['nombre'] ?? '';

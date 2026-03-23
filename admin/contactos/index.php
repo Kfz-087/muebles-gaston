@@ -2,6 +2,13 @@
 
 require_once __DIR__ . '/../../config/conexion.php';
 
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    header("Location: ../../index.php");
+    exit;
+}
+
 $conn = conectar();
 
 // $sql = "SELECT * FROM clientes WHERE usuario = :usuario";
@@ -238,6 +245,10 @@ $conn = conectar();
                 <span class="app-icon">contacts</span>
                 <span class="nav-label">Contactos</span>
             </a>
+            <button type="button" class="nav-item" id="btn-logout" data-id="<?php echo $_SESSION['usuario']; ?>">
+                    <span class="app-icon"> door_sliding</span>
+                    <span class="nav-label">Cerrar Sesión</span>
+            </button>
             <!-- <a href="pedidos/index.php" class="nav-item">
             <span class="app-icon">receipt_long</span>
             <span class="nav-label">Pedidos</span>
@@ -259,6 +270,7 @@ $conn = conectar();
         </div>
         </div>
     </nav>
+    <script src="../../auth/logout.js"></script>
 </body>
 
 </html>

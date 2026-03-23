@@ -5,6 +5,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $conn = conectar();
 
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    header("Location: ../../index.php");
+    exit;
+}
+
+
+
 // Obtener datos multimedia con filtro
 $tipo = isset($_GET['tipo']) ? trim(strtolower($_GET['tipo'])) : '';
 $sql = "SELECT m.*, f.Nombre as formato_nombre, f.tipo 
@@ -397,6 +404,10 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             <span class="app-icon">contacts</span>
             <span class="nav-label">Contactos</span>
         </a>
+        <button type="button" class="nav-item" id="btn-logout" data-id="<?php echo $_SESSION['usuario']; ?>">
+                <span class="app-icon"> door_sliding</span>
+                <span class="nav-label">Cerrar Sesión</span>
+        </button>
         <!-- <a href="pedidos/index.php" class="nav-item">
             <span class="app-icon">receipt_long</span>
             <span class="nav-label">Pedidos</span>
@@ -445,6 +456,8 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
             }
         }
     </script>
+    <script src="../../auth/logout.js"></script>
+
 
 </body>
 

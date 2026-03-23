@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    die("No autorizado");
+}
+
 require_once "../../config/conexion.php";
 
 $conn = conectar();
@@ -48,7 +54,7 @@ $registro->execute([
     ':nombre' => $nombre,
     ':descripcion' => $descripcion,
     ':tipo_descuento' => $tipo_descuento,
-    ':tipo_descuento' => $tipo_descuento,
+
     ':fecha_inicio' => $fecha_inicio,
     ':fecha_fin' => $fecha_fin,
 

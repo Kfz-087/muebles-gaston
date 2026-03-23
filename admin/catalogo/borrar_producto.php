@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    echo json_encode(["status" => "error", "message" => "No autorizado"]);
+    exit;
+}
+
 require_once __DIR__ . '/../../config/conexion.php';
 $conn = conectar();
 

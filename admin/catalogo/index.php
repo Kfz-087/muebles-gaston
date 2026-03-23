@@ -1,3 +1,15 @@
+<?php
+require_once __DIR__ . '/../../config/conexion.php';
+
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    header("Location: ../../index.php");
+    exit;
+}
+
+$usuario = $_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html class="light" lang="es">
 
@@ -483,6 +495,10 @@
                 <span class="app-icon">contacts</span>
                 <span class="nav-label">Contactos</span>
             </a>
+            <button type="button" class="nav-item" id="btn-logout" data-id="<?php echo $usuario; ?>">
+                    <span class="app-icon"> door_sliding</span>
+                    <span class="nav-label">Cerrar Sesión</span>
+            </button>
         </div>
     </div>
 
@@ -622,6 +638,8 @@
     <script src="soft_delete.js"></script>
     <script src="borro_definitivo.js"></script>
     <script src="restaurar_producto.js"></script>
+    <script src="../../auth/logout.js"></script>
+
 </body>
 
 </html>

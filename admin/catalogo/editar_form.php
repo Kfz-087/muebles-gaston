@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
+    header("Location: ../../index.php");
+    exit;
+}
+
 $id_producto = $_GET['id_producto'];
 require_once __DIR__ . '/../../config/conexion.php';
 $conn = conectar();
@@ -45,15 +52,18 @@ $producto = $consulta->fetch(PDO::FETCH_ASSOC);
 
         <label for="categoria_producto"> Categoria:
             <label for="stock_producto"> Stock:
-                <input type="number" name="stock" id="stock_producto" value="<?php echo $producto['stock']; ?>" required>
+                <input type="number" name="stock" id="stock_producto" value="<?php echo $producto['stock']; ?>"
+                    required>
 
             </label>
         </label>
 
         <label for=" imagen_producto"> Imagen:
-                <input type="file" name="imagen" id="imagen_producto">
-            </label>
+            <input type="file" name="imagen" id="imagen_producto">
+        </label>
 
-            <button type="submit">Crear Producto</button>
+        <button type="submit">Crear Producto</button>
     </form>
 </div>
+
+<script src="../../auth/logout.js"></script>

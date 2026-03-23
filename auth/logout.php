@@ -1,13 +1,11 @@
 <?php
-session_start();
 
-require_once '../config/conexion.php';
-$conn = conectar();
+session_start();
 
 $data = json_decode(file_get_contents('php://input'), true);
 $usuario = $data['usuario'] ?? '';
 
-if ($usuario == $_SESSION['usuario']) {
+if (isset($_SESSION['usuario']) && $usuario == $_SESSION['usuario']) {
     session_destroy();
     echo json_encode([
         "status" => "success",
@@ -19,7 +17,5 @@ if ($usuario == $_SESSION['usuario']) {
         "message" => "No hay sesión activa"
     ]);
 }
-
-
 
 ?>

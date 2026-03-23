@@ -10,7 +10,7 @@ if (isset($_SESSION['rol']) === '1') {
 }
 
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== '1') {
-    header("Location: /muebles-gaston/index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -257,12 +257,16 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
             <span class="app-icon">contacts</span>
             <span class="nav-label">Contactos</span>
         </a>
+        <button type="button" class="nav-item" id="btn-logout" data-id="<?php echo $_SESSION['usuario']; ?>">
+                <span class="app-icon"> door_sliding</span>
+                <span class="nav-label">Cerrar Sesión</span>
+        </button>
         <!-- <a href="pedidos/index.php" class="nav-item">
             <span class="app-icon">receipt_long</span>
             <span class="nav-label">Pedidos</span>
         </a>
         <form action="clientes/index.php" method="post">
-            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">
+            <input type="hidden" name="usuario" value=" <?php echo $_SESSION['usuario']; ?>">       
             <button type="submit" class="nav-item">
                 <span class="app-icon">people</span>
                 <span class="nav-label">Clientes</span>
@@ -290,6 +294,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
     <script src="promociones/modal_registrar.js"></script>
+    <script src="../auth/logout.js"></script>
 </body>
 
 

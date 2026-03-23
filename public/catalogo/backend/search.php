@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../../config/conexion.php';
+require_once __DIR__ . '/../../../config/config.php';
 $conn = conectar();
 
 $search = isset($_GET['term']) ? trim($_GET['term']) : '';
@@ -60,7 +61,7 @@ if (count($productos) > 0) {
                     <?php endif; ?>
                 </div>
                 <a class="mt-auto block w-full"
-                    href="https://wa.me/5491170580790?text=Hola, me gustaría solicitar un presupuesto del producto: <?php echo htmlspecialchars($producto['nombre']) . ' - ' . htmlspecialchars($producto['id_producto']); ?>"
+                    href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hola, me gustaría solicitar un presupuesto del producto: ' . $producto['nombre'] . ' - ' . $producto['id_producto'] . "\n\nVer producto: " . BASE_URL . '/public/catalogo/producto.php?id=' . $producto['id_producto']); ?>"
                     target="_blank">
                     <button class="btn-add-cart-sm w-full flex h-9 items-center justify-center gap-2 rounded-lg bg-primary text-white text-xs font-bold transition-all hover:bg-primary/90">
                         <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Consultar Presupuesto

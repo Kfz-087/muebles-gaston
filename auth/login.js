@@ -14,7 +14,7 @@ submit.addEventListener('click', function (e) {
             contrasena: contrasena.value,
             rol: rolInput ? rolInput.value : ''
         };
-        fetch('auth/login.php', {
+        fetch('../auth/login.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,10 +34,10 @@ submit.addEventListener('click', function (e) {
 
                     if (data.usuario.rol === '1') {
                         console.log('Redirigiendo a admin');
-                        window.location.href = 'admin/index.php';
+                        window.location.href = '../admin/index.php';
                     } else if (data.usuario.rol === '0') {
                         console.log('Redirigiendo a public');
-                        window.location.href = 'public/index.php';
+                        window.location.href = '../public/index.php';
                     }
                 } else {
                     alert(data.message);
