@@ -12,6 +12,9 @@ $descripcion = $_POST['descripcion'];
 // $stock = $_POST['stock'];
 $categoria = $_POST['categoria'];
 $ruta = $_POST['ruta'];
+$color_tono = $_POST['color_tono'] ?? null;
+$tipo_diseno = $_POST['tipo_diseno'] ?? null;
+$superficie_acabado = $_POST['superficie_acabado'] ?? null;
 
 // Handle image upload if a new file is provided
 if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
@@ -34,7 +37,7 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         // But user code had: $ruta_imagen = "/assets/productos/" . $nombre_imagen;
         $ruta_db = "/muebles-gaston/assets/productos/" . $nombre_imagen;
 
-        $sql = "UPDATE productos SET nombre=:nombre, descripcion=:descripcion, id_categoria=:categoria, ruta=:ruta WHERE id_producto=:id";
+        $sql = "UPDATE productos SET nombre=:nombre, descripcion=:descripcion, id_categoria=:categoria, ruta=:ruta, color_tono=:color_tono, tipo_diseno=:tipo_diseno, superficie_acabado=:superficie_acabado WHERE id_producto=:id";
         $params = [
             ':nombre' => $nombre,
             // ':peso' => $peso,
@@ -44,6 +47,9 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
             // ':stock' => $stock,
             ':categoria' => $categoria,
             ':ruta' => $ruta_db,
+            ':color_tono' => $color_tono,
+            ':tipo_diseno' => $tipo_diseno,
+            ':superficie_acabado' => $superficie_acabado,
             ':id' => $id
         ];
     } else {
@@ -53,13 +59,16 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
 
 } else {
     // Update without changing the image
-    $sql = "UPDATE productos SET nombre=:nombre, descripcion=:descripcion, id_categoria=:categoria WHERE id_producto=:id";
+    $sql = "UPDATE productos SET nombre=:nombre, descripcion=:descripcion, id_categoria=:categoria, color_tono=:color_tono, tipo_diseno=:tipo_diseno, superficie_acabado=:superficie_acabado WHERE id_producto=:id";
     $params = [
         ':nombre' => $nombre,
         ':descripcion' => $descripcion,
         // ':precio' => $precio,
         // ':stock' => $stock,
         ':categoria' => $categoria,
+        ':color_tono' => $color_tono,
+        ':tipo_diseno' => $tipo_diseno,
+        ':superficie_acabado' => $superficie_acabado,
         ':id' => $id
     ];
 }

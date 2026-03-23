@@ -43,6 +43,45 @@
                     </label>
                 </div> -->
 
+                <div class="form-group">
+                    <label for="color_tono"> Tono de Color:
+                        <select name="color_tono" id="color_tono">
+                            <option value="">Seleccionar Tono</option>
+                            <option value="Blanco">Blanco</option>
+                            <option value="Gris">Gris</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Madera Clara">Madera Clara</option>
+                            <option value="Madera Media">Madera Media</option>
+                            <option value="Madera Oscura">Madera Oscura</option>
+                            <option value="Cálido">Cálido</option>
+                            <option value="Frío">Frío</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo_diseno"> Tipo de Diseño:
+                         <select name="tipo_diseno" id="tipo_diseno">
+                            <option value="">Seleccionar Diseño</option>
+                            <option value="Unicolor">Unicolor</option>
+                            <option value="Madera">Madera</option>
+                            <option value="Material">Material (Piedra, Textil, Metal)</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="superficie_acabado"> Superficie/Acabado:
+                         <select name="superficie_acabado" id="superficie_acabado">
+                            <option value="">Seleccionar Acabado</option>
+                            <option value="Mate">Mate</option>
+                            <option value="Brillante">Brillante</option>
+                            <option value="Texturado">Texturado</option>
+                            <option value="Poroso">Poroso</option>
+                        </select>
+                    </label>
+                </div>
+
                 <?php
                 require_once __DIR__ . '/../../config/conexion.php';
                 $conn = conectar();

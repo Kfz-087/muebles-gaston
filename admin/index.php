@@ -50,10 +50,18 @@ $sql3 = "SELECT
             MIN(producto.ruta) as imagen_referencia,
             MIN(producto.precio) as precio_base
          FROM promociones p
-         INNER JOIN promociones_productos pp ON p.id_promocion = pp.id_promocion
-         INNER JOIN productos producto ON pp.id_producto = producto.id_producto
+         LEFT JOIN promociones_productos pp ON p.id_promocion = pp.id_promocion
+         LEFT JOIN productos producto ON pp.id_producto = producto.id_producto
          WHERE p.fecha_fin >= CURDATE()
-         GROUP BY p.id_promocion, p.nombre, p.descripcion, p.tipo_descuento, p.fecha_inicio, p.fecha_fin, p.activa";
+         GROUP BY 
+            p.id_promocion, 
+            p.nombre, 
+            p.descripcion, 
+            p.tipo_descuento,
+            p.valor_descuento, 
+            p.fecha_inicio, 
+            p.fecha_fin,
+            p.activa";
 $registro3 = $conn->prepare($sql3);
 $registro3->execute();
 $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
@@ -153,34 +161,24 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
 
 
         <?php
-        // require_once __DIR__ . '/../includes/products.php';  
-        require_once __DIR__ . '/../config/conexion.php';
-
-        $conn = conectar();
-
         foreach ($promociones as $promocion) {
             echo " <div class='product-card-vertical'> ";
             echo " <div class='product-image-container'>
-                <img src='" . ($promocion['imagen_referencia']) . "' style='width: 100%; height: 100%; object-fit: cover;'>";
-            if ($promocion['tipo_descuento'] == 'cuotas') {
-                echo "<span class='badge-overlay'> " . $promocion['valor_descuento'] . " Cuotas</span>";
-            } else {
-                $badge_text = ucfirst(str_replace('_', ' ', $promocion['tipo_descuento']));
-                echo "<span class='badge-overlay'>$badge_text</span>";
-            }
+            <img src='" . ($promocion['imagen_referencia']) . "' style='width: 100%; height: 100%; object-fit: cover;'>";
+            echo "<span class='badge-overlay'> " . $promocion['valor_descuento'] . " Cuotas</span>";
             echo " </div> ";
             echo " <div class='product-info-vertical'> ";
-            echo " <p class='product-title-sm'>$promocion[nombre]</p> ";
-            // echo " <p class='product-meta' style='font-size: 0.8rem; color: #666;'>Incluye: $promocion[productos_nombres]</p> ";
-            echo " <p class='product-meta'>$promocion[descripcion]</p> ";
-            echo " <div class='price-row'> ";
-            echo " <p class='price-main' style='color: var(--primary); font-weight: bold;'>¡Oferta!</p> ";
-
-            echo " </div> ";
+            echo " <p class='product-title-sm'>{$promocion['nombre']}</p> ";
+            echo " <p class='product-meta' style='font-size: 0.8rem; color: #666;'>Incluye: {$promocion['productos_nombres']}</p> ";
+            // echo " <p class='product-meta'>{$promocion['descripcion']}</p> ";
+            // echo " <div class='price-row'> ";
+            // echo " <p class='price-main' style='color: var(--primary); font-weight: bold;'>¡Oferta!</p> ";
+            // echo " </div> ";
             echo " </div> ";
             echo " </div> ";
         }
         ?>
+
     </div>
     <!-- Información y Sucursales Section -->
     <div class="info-box">

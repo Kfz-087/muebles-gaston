@@ -14,10 +14,13 @@ $descripcion = $_POST['descripcion'] ?? '';
 // $stock = $_POST['stock'] ?? '';
 $categoria = $_POST['categoria'] ?? '';
 $imagen = $_POST['imagen'] ?? '';
+$color_tono = $_POST['color_tono'] ?? null;
+$tipo_diseno = $_POST['tipo_diseno'] ?? null;
+$superficie_acabado = $_POST['superficie_acabado'] ?? null;
 
 // Basic validation
 if (empty($nombre) || empty($categoria)) {
-    die("Error: Faltan datos obligatorios (Nombre, Precio o Categoría).");
+    die("Error: Faltan datos obligatorios (Nombre o Categoría).");
 }
 
 $ruta_base_datos = ""; // Default empty path
@@ -45,8 +48,8 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
 
 try {
     $conn = conectar();
-    $consulta = $conn->prepare("INSERT INTO productos (nombre, descripcion, id_categoria, ruta, activo) 
-    VALUES(:nombre, :descripcion, :id_categoria, :ruta, 1)");
+    $consulta = $conn->prepare("INSERT INTO productos (nombre, descripcion, id_categoria, ruta, activo, color_tono, tipo_diseno, superficie_acabado) 
+    VALUES(:nombre, :descripcion, :id_categoria, :ruta, 1, :color_tono, :tipo_diseno, :superficie_acabado)");
 
     $exito = $consulta->execute([
         ':nombre' => $nombre,
@@ -55,7 +58,10 @@ try {
         // ':fecha_vencimiento' => $vencimiento ?: null,
         // ':stock' => $stock,
         ':id_categoria' => $categoria,
-        ':ruta' => $ruta_base_datos
+        ':ruta' => $ruta_base_datos,
+        ':color_tono' => $color_tono,
+        ':tipo_diseno' => $tipo_diseno,
+        ':superficie_acabado' => $superficie_acabado
     ]);
 
     if ($exito) {

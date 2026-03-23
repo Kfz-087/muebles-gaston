@@ -65,6 +65,42 @@ document.addEventListener("DOMContentLoaded", () => {
                                 
 
                                 <div class="form-group">
+                                    <label for="color_tono">Tono de Color</label>
+                                    <select name="color_tono" id="color_tono">
+                                        <option value="">Seleccionar Tono</option>
+                                        <option value="Blanco" ${data.color_tono == 'Blanco' ? 'selected' : ''}>Blanco</option>
+                                        <option value="Gris" ${data.color_tono == 'Gris' ? 'selected' : ''}>Gris</option>
+                                        <option value="Negro" ${data.color_tono == 'Negro' ? 'selected' : ''}>Negro</option>
+                                        <option value="Madera Clara" ${data.color_tono == 'Madera Clara' ? 'selected' : ''}>Madera Clara</option>
+                                        <option value="Madera Media" ${data.color_tono == 'Madera Media' ? 'selected' : ''}>Madera Media</option>
+                                        <option value="Madera Oscura" ${data.color_tono == 'Madera Oscura' ? 'selected' : ''}>Madera Oscura</option>
+                                        <option value="Cálido" ${data.color_tono == 'Cálido' ? 'selected' : ''}>Cálido</option>
+                                        <option value="Frío" ${data.color_tono == 'Frío' ? 'selected' : ''}>Frío</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tipo_diseno">Tipo de Diseño</label>
+                                    <select name="tipo_diseno" id="tipo_diseno">
+                                        <option value="">Seleccionar Diseño</option>
+                                        <option value="Unicolor" ${data.tipo_diseno == 'Unicolor' ? 'selected' : ''}>Unicolor</option>
+                                        <option value="Madera" ${data.tipo_diseno == 'Madera' ? 'selected' : ''}>Madera</option>
+                                        <option value="Material" ${data.tipo_diseno == 'Material' ? 'selected' : ''}>Material (Piedra, Textil, Metal)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="superficie_acabado">Superficie/Acabado</label>
+                                    <select name="superficie_acabado" id="superficie_acabado">
+                                        <option value="">Seleccionar Acabado</option>
+                                        <option value="Mate" ${data.superficie_acabado == 'Mate' ? 'selected' : ''}>Mate</option>
+                                        <option value="Brillante" ${data.superficie_acabado == 'Brillante' ? 'selected' : ''}>Brillante</option>
+                                        <option value="Texturado" ${data.superficie_acabado == 'Texturado' ? 'selected' : ''}>Texturado</option>
+                                        <option value="Poroso" ${data.superficie_acabado == 'Poroso' ? 'selected' : ''}>Poroso</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="categoria_producto">Categoría</label>
                                     <select name="categoria" id="categoria_producto">
                                         ${categoriesOptions}
