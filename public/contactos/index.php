@@ -130,19 +130,12 @@ $conn = conectar();
         <!-- Sticky Header -->
         <div
             class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
-            <div class="text-[#1c190d] dark:text-white flex size-12 shrink-0 items-center">
-                <span class="material-symbols-outlined text-2xl">menu</span>
-            </div>
+
             <h2
                 class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
                 Contactos
             </h2>
-            <div class="flex w-12 items-center justify-end">
-                <button
-                    class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#1c190d] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
-                    <span id="carrito_boton" class="material-symbols-outlined text-2xl">shopping_cart</span>
-                </button>
-            </div>
+
         </div>
     </header>
     <!-- Main Content Canvas -->

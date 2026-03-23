@@ -223,9 +223,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
         class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
         <div
             class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
-            <div class="text-[#1c190d] dark:text-white flex size-12 shrink-0 items-center">
-                <span class="material-symbols-outlined text-2xl">menu</span>
-            </div>
+
             <div
                 class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
                 Multimedia
@@ -392,7 +390,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
         const currentTipo = '<?php echo $tipo; ?>';
 
         if (searchInput && galleryGrid) {
-            searchInput.addEventListener('input', function() {
+            searchInput.addEventListener('input', function () {
                 const term = this.value;
                 fetch(`backend/search.php?term=${encodeURIComponent(term)}&tipo=${encodeURIComponent(currentTipo)}`)
                     .then(response => response.text())

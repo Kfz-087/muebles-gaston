@@ -91,9 +91,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         <!-- TopAppBar -->
         <div class="home-header">
 
-            <div style="display: flex; align-items: center; width: 3rem;">
-                <span class="app-icon" style="font-size: 1.5rem;">menu</span>
-            </div>
+
 
 
         </div>
