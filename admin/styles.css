@@ -142,7 +142,7 @@ body {
 }
 
 .btn-icon:hover {
-    background-color: #f3f4f6;
+    background-color: var(--color-surface-light);
     opacity: 0.8;
 }
 
@@ -240,7 +240,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background-color: #f3f4f6;
+    background-color: var(--color-surface-light);
     /* gray-100 */
     padding: 0.25rem;
     border-radius: var(--radius-full);
@@ -272,7 +272,7 @@ body {
 }
 
 .btn-qty.minus {
-    background-color: #ffffff;
+    background-color: var(--color-surface-light);
 }
 
 .dark .btn-qty.minus {
@@ -409,7 +409,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(26, 26, 26, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-light);
@@ -567,7 +567,7 @@ body {
 .stat-card {
     flex: 1;
     min-width: 140px;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-xl);
     padding: 1.25rem;
@@ -618,7 +618,7 @@ body {
 /* Generic Section Card */
 .section-card {
     margin: 0 1rem 1.5rem 1rem;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -662,7 +662,7 @@ body {
 }
 
 .info-item:hover {
-    background-color: #f9fafb;
+    background-color: var(--color-surface-light);
 }
 
 .dark .info-item:hover {
@@ -718,7 +718,7 @@ body {
 }
 
 .btn-small {
-    background-color: #f3f4f6;
+    background-color: var(--color-surface-light);
     color: var(--text-main-light);
     font-size: 0.75rem;
     font-weight: 700;
@@ -761,7 +761,7 @@ body {
     width: 16rem;
     padding: 1rem;
     border-radius: var(--radius-xl);
-    background-color: #f9fafb;
+    background-color: var(--color-surface-light);
     border: 1px solid var(--border-light);
 }
 
@@ -922,7 +922,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border-top: 1px solid var(--border-light);
     padding: 0.75rem 1.5rem;
     display: flex;
@@ -967,7 +967,7 @@ body {
 .search-container {
     display: flex;
     align-items: stretch;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border-radius: var(--radius-xl);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     height: 3rem;
@@ -1028,7 +1028,7 @@ body {
     font-weight: 500;
     white-space: nowrap;
     border: 1px solid var(--border-light);
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     color: var(--text-main-light);
     cursor: pointer;
     transition: all 0.2s;
@@ -1058,7 +1058,7 @@ body {
 }
 
 .order-card {
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: 1px solid #e8e4ce;
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -1238,7 +1238,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-top: 1rem;
-    background-color: #f8f8f5;
+    background-color: var(--color-bg-light);
     padding: 0.75rem;
     border-radius: var(--radius-lg);
 }
@@ -1443,7 +1443,7 @@ body {
 /* Product Cards (Horizontal) */
 .product-card {
     min-width: 200px;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -1499,7 +1499,7 @@ body {
 .info-box {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-xl);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -1552,7 +1552,7 @@ body {
     width: 100%;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    background-color: #f3f4f6;
+    background-color: var(--color-surface-light);
 }
 
 .btn-contact {
@@ -1607,7 +1607,7 @@ body {
     padding: 0 1rem;
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-light);
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     cursor: pointer;
     flex-shrink: 0;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -1692,7 +1692,7 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     padding-bottom: 1rem;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -1824,7 +1824,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     padding: 0.75rem 1rem;
@@ -1882,7 +1882,7 @@ body {
     flex-shrink: 0;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-full);
-    background-color: #f3f4f6;
+    background-color: var(--color-surface-light);
     color: var(--text-sec-light);
     font-size: 0.875rem;
     font-weight: 600;
@@ -1914,7 +1914,7 @@ body {
 }
 
 .order-card {
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-xl);
     padding: 1.25rem;
@@ -2002,7 +2002,7 @@ body {
 }
 
 .nav-back-btn:hover {
-    background-color: #f3f4f6;
+    background-color: var(--color-surface-light);
 }
 
 .dark .nav-back-btn:hover {

@@ -27,9 +27,9 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "rgb(124, 61, 50)",
-                        "background-light": "#f8f8f5",
-                        "background-dark": "#221f10",
+                        "primary": "#d4af37",
+                        "background-light": "#1c1917",
+                        "background-dark": "#151311",
                         "whatsapp": "#25D366",
 
                     },
@@ -58,7 +58,7 @@
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-[#1c190d] dark:text-white antialiased">
+<body class="bg-background-light dark:bg-background-dark text-[#fafaf9] dark:text-white antialiased">
     <?php
     require_once __DIR__ . '/../../config/conexion.php';
     require_once __DIR__ . '/../../config/config.php';
@@ -75,10 +75,10 @@
 
         <!-- Sticky Header -->
         <div
-            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
+            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#44403c] dark:border-[#3d3920]">
 
             <h2
-                class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                class="text-[#fafaf9] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
                 Catálogo de Muebles
             </h2>
 
@@ -89,20 +89,20 @@
             <form action="index.php" method="get" class="flex-1">
                 <input type="hidden" name="categoria" value="<?php echo htmlspecialchars($currentCategory); ?>">
                 <div
-                    class="relative flex items-center h-12 w-full rounded-xl shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] overflow-hidden">
+                    class="relative flex items-center h-12 w-full rounded-xl shadow-sm border border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] overflow-hidden">
                     <div class="pl-4 text-[#9c8e49]">
                         <button type="submit">
                             <i data-lucide="search" class="w-5 h-5"></i>
                         </button>
                     </div>
                     <input id="search-input"
-                        class="flex-1 bg-transparent border-none focus:ring-0 text-[#1c190d] dark:text-white px-3 text-base placeholder:text-[#9c8e49]"
+                        class="flex-1 bg-transparent border-none focus:ring-0 text-[#fafaf9] dark:text-white px-3 text-base placeholder:text-[#9c8e49]"
                         name="search_input" placeholder="Buscar revestimientos..."
                         value="<?php echo htmlspecialchars(isset($_GET['search_input']) ? $_GET['search_input'] : ''); ?>" />
                 </div>
             </form>
             <button id="open-filters"
-                class="flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-primary">
+                class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-primary">
                 <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
             </button>
         </div>
@@ -114,7 +114,7 @@
         <!-- Filter Drawer -->
         <div id="filter-drawer"
             class="fixed right-0 top-0 h-full w-[85%] max-w-sm bg-background-light dark:bg-background-dark z-[101] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
-            <div class="p-4 border-b border-[#e8e4d8] dark:border-[#3d3920] flex justify-between items-center">
+            <div class="p-4 border-b border-[#44403c] dark:border-[#3d3920] flex justify-between items-center">
                 <h3 class="text-lg font-bold">Filtros</h3>
                 <button id="close-filters" class="p-2 text-[#9c8e49]">
                     <i data-lucide="x" class="w-6 h-6"></i>
@@ -165,7 +165,7 @@
                     </div>
 
                     <!-- Design Type Filter -->
-                    <div>
+                    <!-- <div>
                         <h4 class="text-sm font-bold text-[#9c8e49] uppercase tracking-wider mb-3">Tipo de Diseño</h4>
                         <div class="flex flex-col gap-2">
                             <?php
@@ -174,25 +174,25 @@
                                 $checked = (isset($_GET['diseno']) && $_GET['diseno'] == $d) ? 'checked' : '';
                                 ?>
                                 <label
-                                    class="flex items-center justify-between p-3 rounded-xl border border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] cursor-pointer hover:border-primary transition-colors">
+                                    class="flex items-center justify-between p-3 rounded-xl border border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] cursor-pointer hover:border-primary transition-colors">
                                     <span class="text-sm font-medium"><?php echo $d; ?></span>
                                     <input type="radio" name="diseno" value="<?php echo $d; ?>"
                                         class="text-primary focus:ring-primary" <?php echo $checked; ?>>
                                 </label>
                             <?php endforeach; ?>
                             <label
-                                class="flex items-center justify-between p-3 rounded-xl border border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] cursor-pointer hover:border-primary transition-colors">
+                                class="flex items-center justify-between p-3 rounded-xl border border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] cursor-pointer hover:border-primary transition-colors">
                                 <span class="text-sm font-medium">Todos los diseños</span>
                                 <input type="radio" name="diseno" value="" class="text-primary focus:ring-primary" <?php echo !isset($_GET['diseno']) || $_GET['diseno'] == '' ? 'checked' : ''; ?>>
                             </label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Surface Filter -->
                     <div>
                         <h4 class="text-sm font-bold text-[#9c8e49] uppercase tracking-wider mb-3">Superficie</h4>
                         <select name="superficie"
-                            class="w-full rounded-xl border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] text-sm py-3 focus:ring-primary focus:border-primary">
+                            class="w-full rounded-xl border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] text-sm py-3 focus:ring-primary focus:border-primary">
                             <option value="">Cualquier superficie</option>
                             <?php
                             $superficies = ["Mate", "Brillante", "Texturado", "Poroso"];
@@ -206,9 +206,9 @@
                 </div>
 
                 <div
-                    class="p-4 border-t border-[#e8e4d8] dark:border-[#3d3920] flex gap-3 bg-background-light dark:bg-background-dark">
+                    class="p-4 border-t border-[#44403c] dark:border-[#3d3920] flex gap-3 bg-background-light dark:bg-background-dark">
                     <a href="index.php?categoria=<?php echo urlencode($currentCategory); ?>"
-                        class="flex-1 h-12 flex items-center justify-center rounded-xl border border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold">Limpiar</a>
+                        class="flex-1 h-12 flex items-center justify-center rounded-xl border border-[#44403c] dark:border-[#3d3920] text-sm font-bold">Limpiar</a>
                     <button type="submit"
                         class="flex-[2] h-12 bg-primary text-white rounded-xl text-sm font-bold shadow-lg shadow-primary/20">Aplicar
                         Filtros</button>
@@ -248,8 +248,8 @@
             <?php
             // Categories already fetched above
             $isActiveTodos = ($currentCategory === 'Todos');
-            $bgClassTodos = $isActiveTodos ? 'bg-primary' : 'bg-white dark:bg-[#322e1a] border border-[#e8e4d8] dark:border-none';
-            $textClassTodos = $isActiveTodos ? 'text-white font-bold' : 'text-[#1c190d] dark:text-white font-medium';
+            $bgClassTodos = $isActiveTodos ? 'bg-primary' : 'bg-[#292524] dark:bg-[#322e1a] border border-[#44403c] dark:border-none';
+            $textClassTodos = $isActiveTodos ? 'text-white font-bold' : 'text-[#fafaf9] dark:text-white font-medium';
             ?>
             <a href="index.php"
                 class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl px-4 shadow-sm <?php echo $bgClassTodos; ?>"
@@ -260,8 +260,8 @@
             <?php foreach ($allCategories as $row):
                 $cat = $row['nombre'];
                 $isActive = ($currentCategory === $cat);
-                $bgClass = $isActive ? 'bg-primary' : 'bg-white dark:bg-[#322e1a] border border-[#e8e4d8] dark:border-none';
-                $textClass = $isActive ? 'text-white font-bold' : 'text-[#1c190d] dark:text-white font-medium';
+                $bgClass = $isActive ? 'bg-primary' : 'bg-[#292524] dark:bg-[#322e1a] border border-[#44403c] dark:border-none';
+                $textClass = $isActive ? 'text-white font-bold' : 'text-[#fafaf9] dark:text-white font-medium';
                 // Preserve search/filters when changing category? Egger usually resets filters when changing major category, but let's keep them if they exist
                 $url_params = $_GET;
                 $url_params['categoria'] = $cat;
@@ -279,7 +279,7 @@
         </div>
 
         <div class="flex items-center justify-between px-4 mt-2">
-            <h3 class="text-[#1c190d] dark:text-white text-lg font-extrabold">
+            <h3 class="text-[#fafaf9] dark:text-white text-lg font-extrabold">
                 <?php echo $currentCategory == 'Todos' ? 'Nuestros Productos' : htmlspecialchars(ucfirst(str_replace('_', ' ', $currentCategory))); ?>
             </h3>
             <span class="text-xs font-semibold text-[#9c8e49] uppercase tracking-wider">Muebles Gastón</span>
@@ -353,7 +353,7 @@
                 foreach ($productos as $producto) {
                     ?>
                     <div
-                        class="flex flex-col gap-2 pb-4 bg-white dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] group transition-all hover:shadow-md">
+                        class="flex flex-col gap-2 pb-4 bg-[#292524] dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#44403c] dark:border-[#3d3920] group transition-all hover:shadow-md">
                         <div class="relative w-full aspect-square bg-center bg-no-repeat bg-cover cursor-zoom-in overflow-hidden"
                             style="background-image: url('<?php echo htmlspecialchars($producto['ruta']); ?>');"
                             onclick="openZoom('<?php echo htmlspecialchars($producto['ruta']); ?>', '<?php echo htmlspecialchars($producto['nombre']); ?>')">
@@ -393,16 +393,10 @@
 
                         <div class="px-3 py-1 flex flex-col flex-1">
                             <div class="flex items-center gap-1.5 mb-1">
-                                <?php if (!empty($producto['tipo_diseno'])): ?>
-                                    <span
-                                        class="text-[9px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded uppercase"><?php echo $producto['tipo_diseno']; ?></span>
-                                <?php endif; ?>
-                                <?php if (!empty($producto['superficie_acabado'])): ?>
-                                    <span
-                                        class="text-[9px] font-bold text-[#9c8e49] bg-[#9c8e49]/10 px-1.5 py-0.5 rounded uppercase"><?php echo $producto['superficie_acabado']; ?></span>
-                                <?php endif; ?>
+
+
                             </div>
-                            <!-- <p class="text-[#1c190d] dark:text-white text-sm font-bold leading-tight line-clamp-2">
+                            <!-- <p class="text-[#fafaf9] dark:text-white text-sm font-bold leading-tight line-clamp-2">
                                 <?php echo htmlspecialchars($producto['nombre']); ?>
                             </p>
                             <p class="text-[#9c8e49] text-[11px] font-semibold mt-1 line-clamp-1">
@@ -446,7 +440,7 @@
                 <!-- Previous Button -->
                 <?php if ($page > 1): ?>
                     <a href="<?php echo htmlspecialchars(getPageUrl($page - 1)); ?>"
-                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </a>
                 <?php endif; ?>
@@ -457,7 +451,7 @@
                 $end = min($total_pages, $page + 2);
 
                 if ($start > 1) {
-                    echo '<a href="' . htmlspecialchars(getPageUrl(1)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">1</a>';
+                    echo '<a href="' . htmlspecialchars(getPageUrl(1)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-sm font-bold text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">1</a>';
                     if ($start > 2) {
                         echo '<span class="flex h-10 w-10 items-center justify-center text-[#9c8e49] font-bold">...</span>';
                     }
@@ -465,7 +459,7 @@
 
                 for ($i = $start; $i <= $end; $i++) {
                     $isCurrent = ($i == $page);
-                    $bgClass = $isCurrent ? 'bg-primary border-primary text-white' : 'bg-white dark:bg-[#322e1a] border-[#e8e4d8] dark:border-[#3d3920] text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e]';
+                    $bgClass = $isCurrent ? 'bg-primary border-primary text-white' : 'bg-[#292524] dark:bg-[#322e1a] border-[#44403c] dark:border-[#3d3920] text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e]';
                     echo '<a href="' . htmlspecialchars(getPageUrl($i)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl shadow-sm border ' . $bgClass . ' text-sm font-bold transition-colors">' . $i . '</a>';
                 }
 
@@ -473,14 +467,14 @@
                     if ($end < $total_pages - 1) {
                         echo '<span class="flex h-10 w-10 items-center justify-center text-[#9c8e49] font-bold">...</span>';
                     }
-                    echo '<a href="' . htmlspecialchars(getPageUrl($total_pages)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">' . $total_pages . '</a>';
+                    echo '<a href="' . htmlspecialchars(getPageUrl($total_pages)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-sm font-bold text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">' . $total_pages . '</a>';
                 }
                 ?>
 
                 <!-- Next Button -->
                 <?php if ($page < $total_pages): ?>
                     <a href="<?php echo htmlspecialchars(getPageUrl($page + 1)); ?>"
-                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </a>
                 <?php endif; ?>

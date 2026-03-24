@@ -19,7 +19,7 @@
 }
 
 .horarios-content {
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border-radius: 1.25rem;
     padding: 2rem;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
@@ -65,7 +65,7 @@
     border-radius: 0.5rem;
     font-size: 0.875rem;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     color: #1e293b;
 }
 

@@ -72,8 +72,7 @@ $whatsapp_text = urlencode("Hola, me gustaría solicitar un presupuesto del prod
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
@@ -86,9 +85,9 @@ $whatsapp_text = urlencode("Hola, me gustaría solicitar un presupuesto del prod
             theme: {
                 extend: {
                     colors: {
-                        "primary": "rgb(124, 61, 50)",
-                        "background-light": "#f8f8f5",
-                        "background-dark": "#221f10",
+                        "primary": "#d4af37",
+                        "background-light": "#1c1917",
+                        "background-dark": "#151311",
                         "whatsapp": "#25D366",
                     },
                     fontFamily: {
@@ -106,12 +105,12 @@ $whatsapp_text = urlencode("Hola, me gustaría solicitar un presupuesto del prod
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-[#1c190d] dark:text-white antialiased">
+<body class="bg-background-light dark:bg-background-dark text-[#fafaf9] dark:text-white antialiased">
     <div class="relative flex min-h-screen w-full flex-col pb-24">
 
         <!-- Header -->
         <div
-            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
+            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#44403c] dark:border-[#3d3920]">
             <a href="index.php" class="flex items-center gap-2 text-primary">
                 <span class="material-symbols-outlined">arrow_back</span>
             </a>
@@ -123,13 +122,12 @@ $whatsapp_text = urlencode("Hola, me gustaría solicitar un presupuesto del prod
 
         <!-- Product Image -->
         <div class="w-full aspect-square max-h-[70vh] overflow-hidden bg-gray-100 dark:bg-[#2a2715]">
-            <img src="<?php echo htmlspecialchars($producto['ruta']); ?>"
-                alt="<?php echo $nombre; ?>"
+            <img src="<?php echo htmlspecialchars($producto['ruta']); ?>" alt="<?php echo $nombre; ?>"
                 class="w-full h-full object-contain" />
         </div>
 
         <!-- Product Info -->
-        <div class="px-5 py-6 flex flex-col gap-4">
+        <div class="px-5 py-6 flex flex-col gap-4" style="margin-top: 2rem; hover:transition(translate-y-2px)">
             <!-- Category & Tags -->
             <div class="flex items-center gap-2 flex-wrap">
                 <?php if (!empty($producto['categoria_nombre'])): ?>
@@ -163,8 +161,7 @@ $whatsapp_text = urlencode("Hola, me gustaría solicitar un presupuesto del prod
             <?php endif; ?>
 
             <!-- WhatsApp CTA -->
-            <a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>?text=<?php echo $whatsapp_text; ?>"
-                target="_blank"
+            <a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>?text=<?php echo $whatsapp_text; ?>" target="_blank"
                 class="mt-4 flex h-14 items-center justify-center gap-3 rounded-2xl bg-whatsapp text-white text-base font-bold shadow-lg shadow-whatsapp/30 transition-all hover:shadow-xl active:scale-[0.98]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="#ffffff"
@@ -175,7 +172,7 @@ $whatsapp_text = urlencode("Hola, me gustaría solicitar un presupuesto del prod
 
             <!-- Back to catalog -->
             <a href="index.php"
-                class="flex h-12 items-center justify-center gap-2 rounded-xl border-2 border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold transition-all hover:bg-white dark:hover:bg-[#322e1a]">
+                class="flex h-12 items-center justify-center gap-2 rounded-xl border-2 border-[#44403c] dark:border-[#3d3920] text-sm font-bold transition-all hover:bg-[#292524] dark:hover:bg-[#322e1a]">
                 <span class="material-symbols-outlined text-sm">arrow_back</span>
                 Volver al Catálogo
             </a>

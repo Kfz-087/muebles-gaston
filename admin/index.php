@@ -95,9 +95,9 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         theme: {
             extend: {
                 colors: {
-                    "primary": "rgb(124, 61, 50)",
-                    "background-light": "#f8f8f5",
-                    "background-dark": "#221f10",
+                    "primary": "#d4af37",
+                    "background-light": "#1c1917",
+                    "background-dark": "#151311",
                 },
                 fontFamily: {
                     "display": ["Inter", "sans-serif"]

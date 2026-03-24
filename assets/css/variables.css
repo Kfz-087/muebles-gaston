@@ -1,25 +1,25 @@
 :root {
-    /* Color Palette */
-    --color-primary: rgb(124, 61, 50);
-    --color-primary-hover: rgb(124, 61, 50);
-    --color-bg-light: #f8f8f5;
-    --color-bg-dark: #121212;
-    --color-surface-light: #ffffff;
-    --color-surface-dark: #1e1e1e;
+    /* Color Palette - Tema Oscuro Rústico (Dorado) */
+    --color-primary: #d4af37;
+    --color-primary-hover: #b9942a;
+    --color-bg-light: #1c1917;
+    --color-bg-dark: #151311;
+    --color-surface-light: #292524;
+    --color-surface-dark: #1c1917;
 
     /* Text Colors */
-    --text-main-light: #111827;
-    /* gray-900 */
-    --text-sec-light: #6b7280;
-    /* gray-500 */
-    --text-main-dark: #ffffff;
+    --text-main-light: #fafaf9;
+    --text-main-dark: #202020;
+    /* off-white */
+    --text-sec-light: #a8a29e;
+    /* muted gray */
     --text-sec-dark: #9ca3af;
     /* gray-400 */
 
     /* Borders */
-    --border-light: #f3f4f6;
-    /* gray-100 */
-    --border-dark: #1f2937;
+    --border-light: #44403c;
+    /* dark border */
+    --border-dark: #292524;
     /* gray-800 */
 
     /* Spacing & Sizing */

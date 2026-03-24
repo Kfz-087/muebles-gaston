@@ -17,7 +17,7 @@
 .modal-container {
     position: absolute;
     top: 10%;
-    background-color: #ffffff;
+    background-color: var(--color-surface-light);
     width: 90%;
     max-width: 500px;
     max-height: 90vh;

@@ -22,7 +22,7 @@ if (count($productos) > 0) {
     foreach ($productos as $producto) {
         $rutaImagen = !empty($producto['ruta']) ? $producto['ruta'] : 'https://images.unsplash.com/photo-1586023494664-14d444356981?q=80&w=800&auto=format&fit=crop';
         ?>
-        <div class="flex flex-col gap-2 pb-4 bg-white dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] group transition-all hover:shadow-md">
+        <div class="flex flex-col gap-2 pb-4 bg-[#292524] dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#44403c] dark:border-[#3d3920] group transition-all hover:shadow-md">
             <div class="relative w-full aspect-square bg-center bg-no-repeat bg-cover cursor-zoom-in overflow-hidden"
                 style="background-image: url('<?php echo htmlspecialchars($rutaImagen); ?>');"
                 onclick="openZoom('<?php echo htmlspecialchars($rutaImagen); ?>', '<?php echo htmlspecialchars($producto['nombre']); ?>')">

@@ -131,7 +131,7 @@ input[type="file"] {
     line-height: 1.25;
     display: -webkit-box;
     overflow: scroll;
-    background-color: #fff;
+    background-color: var(--color-surface-light);
     border: none;
 }
 

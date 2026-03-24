@@ -35,9 +35,9 @@ $usuario = $_SESSION['usuario'];
             theme: {
                 extend: {
                     colors: {
-                        "primary": "rgb(124, 61, 50)",
-                        "background-light": "#f8f8f5",
-                        "background-dark": "#221f10",
+                        "primary": "#d4af37",
+                        "background-light": "#1c1917",
+                        "background-dark": "#151311",
                         "whatsapp": "#25D366",
                     },
                     fontFamily: {
@@ -65,23 +65,23 @@ $usuario = $_SESSION['usuario'];
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-[#1c190d] dark:text-white antialiased">
+<body class="bg-background-light dark:bg-background-dark text-[#fafaf9] dark:text-white antialiased">
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden pb-24">
 
         <!-- Sticky Header -->
         <header>
             <div
-                class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
-                <div class="text-[#1c190d] dark:text-white flex size-12 shrink-0 items-center">
+                class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#44403c] dark:border-[#3d3920]">
+                <div class="text-[#fafaf9] dark:text-white flex size-12 shrink-0 items-center">
                     <span class="material-symbols-outlined text-2xl">menu</span>
                 </div>
                 <h2
-                    class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                    class="text-[#fafaf9] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
                     Catálogo Admin
                 </h2>
                 <div class="flex w-12 items-center justify-end">
                     <button
-                        class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#1c190d] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+                        class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#fafaf9] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
                         <span id="carrito_boton" class="material-symbols-outlined text-2xl">shopping_cart</span>
                     </button>
                 </div>
@@ -96,18 +96,18 @@ $usuario = $_SESSION['usuario'];
                 <!-- Search row -->
                 <label class="flex flex-col min-w-40 h-12 w-full">
                     <div
-                        class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm border border-[#e8e4d8] dark:border-[#3d3920]">
+                        class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm border border-[#44403c] dark:border-[#3d3920]">
                         <div
-                            class="text-[#9c8e49] flex border-none bg-white dark:bg-[#322e1a] items-center justify-center pl-4 rounded-l-xl border-r-0">
+                            class="text-[#9c8e49] flex border-none bg-[#292524] dark:bg-[#322e1a] items-center justify-center pl-4 rounded-l-xl border-r-0">
                             <button type="submit" class="flex items-center justify-center">
                                 <span class="material-symbols-outlined">search</span>
                             </button>
                         </div>
                         <input
-                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1c190d] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#322e1a] focus:border-none h-full placeholder:text-[#9c8e49] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#fafaf9] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#292524] dark:bg-[#322e1a] focus:border-none h-full placeholder:text-[#9c8e49] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
                             name="search_input" placeholder="Buscar productos..."
                             value="<?php echo htmlspecialchars(isset($_GET['search_input']) ? $_GET['search_input'] : ''); ?>" />
-                        <div class="text-[#9c8e49] flex border-none bg-white dark:bg-[#322e1a] items-center justify-center pr-4 rounded-r-xl cursor-pointer"
+                        <div class="text-[#9c8e49] flex border-none bg-[#292524] dark:bg-[#322e1a] items-center justify-center pr-4 rounded-r-xl cursor-pointer"
                             id="toggle-advanced-filters">
                             <span class="material-symbols-outlined text-xl">tune</span>
                         </div>
@@ -118,7 +118,7 @@ $usuario = $_SESSION['usuario'];
                 <div id="advanced-filters"
                     class="<?php echo (isset($_GET['color']) || isset($_GET['diseno']) || isset($_GET['superficie'])) ? '' : 'hidden'; ?> grid grid-cols-1 sm:grid-cols-3 gap-2">
                     <select name="color"
-                        class="rounded-xl border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] text-sm py-2">
+                        class="rounded-xl border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] text-sm py-2">
                         <option value="">Cualquier Color</option>
                         <?php
                         $colores = ["Blanco", "Gris", "Negro", "Madera Clara", "Madera Media", "Madera Oscura", "Cálido", "Frío"];
@@ -130,7 +130,7 @@ $usuario = $_SESSION['usuario'];
                     </select>
 
                     <select name="diseno"
-                        class="rounded-xl border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] text-sm py-2">
+                        class="rounded-xl border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] text-sm py-2">
                         <option value="">Cualquier Diseño</option>
                         <option value="Unicolor" <?php echo (isset($_GET['diseno']) && $_GET['diseno'] == 'Unicolor') ? 'selected' : ''; ?>>Unicolor</option>
                         <option value="Madera" <?php echo (isset($_GET['diseno']) && $_GET['diseno'] == 'Madera') ? 'selected' : ''; ?>>Madera</option>
@@ -138,7 +138,7 @@ $usuario = $_SESSION['usuario'];
                     </select>
 
                     <select name="superficie"
-                        class="rounded-xl border-[#e8e4d8] dark:border-[#3d3920] bg-white dark:bg-[#322e1a] text-sm py-2">
+                        class="rounded-xl border-[#44403c] dark:border-[#3d3920] bg-[#292524] dark:bg-[#322e1a] text-sm py-2">
                         <option value="">Cualquier Acabado</option>
                         <option value="Mate" <?php echo (isset($_GET['superficie']) && $_GET['superficie'] == 'Mate') ? 'selected' : ''; ?>>Mate</option>
                         <option value="Brillante" <?php echo (isset($_GET['superficie']) && $_GET['superficie'] == 'Brillante') ? 'selected' : ''; ?>>Brillante</option>
@@ -181,8 +181,8 @@ $usuario = $_SESSION['usuario'];
 
             // "Todos" option
             $isActiveTodos = ($currentCategory === 'Todos');
-            $bgClassTodos = $isActiveTodos ? 'bg-primary' : 'bg-white dark:bg-[#322e1a] border border-[#e8e4d8] dark:border-none';
-            $textClassTodos = $isActiveTodos ? 'text-white font-bold' : 'text-[#1c190d] dark:text-white font-medium';
+            $bgClassTodos = $isActiveTodos ? 'bg-primary' : 'bg-[#292524] dark:bg-[#322e1a] border border-[#44403c] dark:border-none';
+            $textClassTodos = $isActiveTodos ? 'text-white font-bold' : 'text-[#fafaf9] dark:text-white font-medium';
             ?>
             <a href="index.php"
                 class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl px-4 shadow-sm <?php echo $bgClassTodos; ?>"
@@ -193,8 +193,8 @@ $usuario = $_SESSION['usuario'];
             <?php foreach ($allCategories as $row):
                 $cat = $row['nombre'];
                 $isActive = ($currentCategory === $cat);
-                $bgClass = $isActive ? 'bg-primary' : 'bg-white dark:bg-[#322e1a] border border-[#e8e4d8] dark:border-none';
-                $textClass = $isActive ? 'text-white font-bold' : 'text-[#1c190d] dark:text-white font-medium';
+                $bgClass = $isActive ? 'bg-primary' : 'bg-[#292524] dark:bg-[#322e1a] border border-[#44403c] dark:border-none';
+                $textClass = $isActive ? 'text-white font-bold' : 'text-[#fafaf9] dark:text-white font-medium';
                 $url = 'index.php?categoria=' . urlencode($cat);
 
                 // Prettify label
@@ -208,15 +208,15 @@ $usuario = $_SESSION['usuario'];
             <?php endforeach; ?>
 
             <button type="button"
-                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#322e1a] px-4 shadow-sm border border-[#e8e4d8] dark:border-none"
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#292524] dark:bg-[#322e1a] px-4 shadow-sm border border-[#44403c] dark:border-none"
                 id="btn-categoria">
                 <span class="material-symbols-outlined text-lg text-primary">edit</span>
-                <p class="text-[#1c190d] dark:text-white text-sm font-medium leading-normal">Crear Categoría</p>
+                <p class="text-[#fafaf9] dark:text-white text-sm font-medium leading-normal">Crear Categoría</p>
             </button>
         </div>
 
         <div class="flex items-center justify-between px-4 mt-2">
-            <h3 class="text-[#1c190d] dark:text-white text-lg font-extrabold">Populares por Mayor</h3>
+            <h3 class="text-[#fafaf9] dark:text-white text-lg font-extrabold">Populares por Mayor</h3>
             <button class="text-sm font-semibold text-[#9c8e49]">Ver todo</button>
         </div>
 
@@ -287,7 +287,7 @@ $usuario = $_SESSION['usuario'];
                 foreach ($productos as $producto) {
                     ?>
                     <div
-                        class="flex flex-col gap-2 pb-4 bg-white dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#e8e4d8] dark:border-[#3d3920]">
+                        class="flex flex-col gap-2 pb-4 bg-[#292524] dark:bg-[#2a2715] rounded-xl overflow-hidden shadow-sm border border-[#44403c] dark:border-[#3d3920]">
                         <div class="relative w-full aspect-square overflow-hidden">
                             <!-- Background Image Layer -->
                             <div class="absolute inset-0 bg-center bg-no-repeat bg-cover"
@@ -308,12 +308,12 @@ $usuario = $_SESSION['usuario'];
                             <?php if ($producto['activo'] == 1): ?>
                                 <div class="absolute top-2 right-2 flex flex-col gap-2 z-10">
                                     <button
-                                        class="btn-modificar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
+                                        class="btn-modificar bg-[#292524]/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
                                         data-id="<?php echo $producto['id_producto']; ?>">
                                         <span class="material-symbols-outlined text-lg">edit</span>
                                     </button>
                                     <button
-                                        class="btn-borrar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
+                                        class="btn-borrar bg-[#292524]/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
                                         data-id="<?php echo $producto['id_producto']; ?>">
                                         <span class="material-symbols-outlined text-lg">delete</span>
                                     </button>
@@ -322,12 +322,12 @@ $usuario = $_SESSION['usuario'];
                             <?php if ($producto['activo'] == 0): ?>
                                 <div class="absolute top-2 right-2 flex flex-col gap-2 z-10">
                                     <button
-                                        class="btn-restaurar bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
+                                        class="btn-restaurar bg-[#292524]/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-primary/50 text-primary hover:scale-110 transition-transform"
                                         data-id="<?php echo $producto['id_producto']; ?>">
                                         <span class="material-symbols-outlined text-lg">edit</span>
                                     </button>
                                     <button
-                                        class="btn-definitivo bg-white/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
+                                        class="btn-definitivo bg-[#292524]/90 dark:bg-black/70 p-1.5 rounded-full shadow-md border border-red-500/50 text-red-500 hover:scale-110 transition-transform"
                                         data-id="<?php echo $producto['id_producto']; ?>">
                                         <span class="material-symbols-outlined text-lg">delete</span>
                                     </button>
@@ -340,7 +340,7 @@ $usuario = $_SESSION['usuario'];
 
                         <div class="px-3 py-1 flex flex-col flex-1">
                             <p
-                                class="text-[#1c190d] dark:text-white text-sm font-bold leading-tight line-clamp-2 mb-3 h-10 min-h-[2.5rem]">
+                                class="text-[#fafaf9] dark:text-white text-sm font-bold leading-tight line-clamp-2 mb-3 h-10 min-h-[2.5rem]">
                                 <?php echo htmlspecialchars($producto['nombre']); ?>
                             </p>
                             <!-- <p class="text-[#9c8e49] text-[11px] font-semibold mt-1 line-clamp-1">
@@ -381,7 +381,7 @@ $usuario = $_SESSION['usuario'];
                 <!-- Previous Button -->
                 <?php if ($page > 1): ?>
                     <a href="<?php echo htmlspecialchars(getPageUrl($page - 1)); ?>"
-                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </a>
                 <?php endif; ?>
@@ -392,7 +392,7 @@ $usuario = $_SESSION['usuario'];
                 $end = min($total_pages, $page + 2);
 
                 if ($start > 1) {
-                    echo '<a href="' . htmlspecialchars(getPageUrl(1)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">1</a>';
+                    echo '<a href="' . htmlspecialchars(getPageUrl(1)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-sm font-bold text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">1</a>';
                     if ($start > 2) {
                         echo '<span class="flex h-10 w-10 items-center justify-center text-[#9c8e49] font-bold">...</span>';
                     }
@@ -400,7 +400,7 @@ $usuario = $_SESSION['usuario'];
 
                 for ($i = $start; $i <= $end; $i++) {
                     $isCurrent = ($i == $page);
-                    $bgClass = $isCurrent ? 'bg-primary border-primary text-white' : 'bg-white dark:bg-[#322e1a] border-[#e8e4d8] dark:border-[#3d3920] text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e]';
+                    $bgClass = $isCurrent ? 'bg-primary border-primary text-white' : 'bg-[#292524] dark:bg-[#322e1a] border-[#44403c] dark:border-[#3d3920] text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e]';
                     echo '<a href="' . htmlspecialchars(getPageUrl($i)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl shadow-sm border ' . $bgClass . ' text-sm font-bold transition-colors">' . $i . '</a>';
                 }
 
@@ -408,14 +408,14 @@ $usuario = $_SESSION['usuario'];
                     if ($end < $total_pages - 1) {
                         echo '<span class="flex h-10 w-10 items-center justify-center text-[#9c8e49] font-bold">...</span>';
                     }
-                    echo '<a href="' . htmlspecialchars(getPageUrl($total_pages)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-sm font-bold text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">' . $total_pages . '</a>';
+                    echo '<a href="' . htmlspecialchars(getPageUrl($total_pages)) . '" class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-sm font-bold text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">' . $total_pages . '</a>';
                 }
                 ?>
 
                 <!-- Next Button -->
                 <?php if ($page < $total_pages): ?>
                     <a href="<?php echo htmlspecialchars(getPageUrl($page + 1)); ?>"
-                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-[#322e1a] shadow-sm border border-[#e8e4d8] dark:border-[#3d3920] text-[#1c190d] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#292524] dark:bg-[#322e1a] shadow-sm border border-[#44403c] dark:border-[#3d3920] text-[#fafaf9] dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a351e] transition-colors">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </a>
                 <?php endif; ?>

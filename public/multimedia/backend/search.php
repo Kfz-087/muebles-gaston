@@ -52,7 +52,7 @@ if (count($archivos) > 0) {
                         src="<?php echo $rutaArchivo; ?>" alt="<?php echo $nombreCorto; ?>" loading="lazy" />
                     <div class="absolute top-3 left-3 flex gap-2">
                         <span
-                            class="bg-white text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1 shadow-sm">
+                            class="bg-[#292524] text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1 shadow-sm">
                             <span class="material-symbols-outlined text-[12px]">image</span> FOTO
                         </span>
                     </div>

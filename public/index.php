@@ -47,6 +47,7 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Gastón Carpintería y Diseño</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Link to our Semantic CSS -->
     <link href="styles.css" rel="stylesheet" />
 
@@ -68,9 +69,9 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
         theme: {
             extend: {
                 colors: {
-                    "primary": "rgb(124, 61, 50)",
-                    "background-light": "#f8f8f5",
-                    "background-dark": "#221f10",
+                    "primary": "#d4af37",
+                    "background-light": "#1c1917",
+                    "background-dark": "#151311",
                 },
                 fontFamily: {
                     "display": ["Inter", "sans-serif"]
@@ -88,30 +89,32 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div style="display: flex; flex-direction: column; min-height: 100vh;">
-        <!-- TopAppBar -->
-        <div class="home-header">
+        <!-- Sticky Header -->
+        <div
+            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#44403c] dark:border-[#3d3920]">
 
-
-
+            <h2
+                class="text-[#fafaf9] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Carpintería y Diseño
+            </h2>
 
         </div>
+
 
         <!-- HeaderImage / Hero -->
         <div class="hero-container">
             <div class="hero-card" data-alt="High quality bulk burger patties and premium hot dog ingredients"
-                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoMNm0UEcqkvYfPDfPRvoHKQ3V16lDIdRikg&s");'>
+                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("/muebles-gaston/assets/productos/bac31eed-9953-4784-ad91-a4d08d54a548.jfif");'>
                 <div class="hero-content">
-                    <p class="hero-title">Tu Carpintero de Confianza</p>
-                    <p class="hero-subtitle">Los Mejores muebles de la argentina</p>
+
                 </div>
             </div>
         </div>
 
         <!-- Headline & Who We Are -->
         <div class="info-section">
-            <h3 class="section-headline"> Servicios de carpintería de la más alta calidad </h3>
-            <p class="section-desc">
-                Más de 20 años de experencia en el armado de muebles
+            <h3 class="section-headline"> Más de 20 años de experiencia en la fabricación de muebles a medida </h3>
+
         </div>
 
         <!-- SectionHeader: Productos Estrella -->
@@ -123,37 +126,42 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+        <div class='product-container' style="display:flex">
+            <?php
+            foreach ($promociones as $promocion) {
 
-        <?php
-        foreach ($promociones as $promocion) {
-            echo " <div class='product-card-vertical'> ";
-            echo " <div class='product-image-container'>
+                echo " <div class='product-card-vertical' style='background-color: var(--color-bg-light); border-color: var(--color-border-light);'> ";
+                echo " <div class='product-image-container'>
             <img src='" . ($promocion['imagen_referencia']) . "' style='width: 100%; height: 100%; object-fit: cover;'>";
-            echo "<span class='badge-overlay'> " . $promocion['valor_descuento'] . " Cuotas sin Interés </span>";
-            echo " </div> ";
-            echo " <div class='product-info-vertical'> ";
-            echo " <p class='product-title-sm'>{$promocion['nombre']}</p> ";
-            echo " <p class='product-meta' style='font-size: 0.8rem; color: #666;'>Incluye: {$promocion['productos_nombres']}</p> ";
-            // echo " <p class='product-meta'>{$promocion['descripcion']}</p> ";
-            // echo " <div class='price-row'> ";
-            // echo " <p class='price-main' style='color: var(--primary); font-weight: bold;'>¡Oferta!</p> ";
-            // echo " </div> ";
-            echo " </div> ";
-            echo " </div> ";
-        }
-        ?>
+                echo "<span class='badge-overlay' style='color: var(--text-main-dark);'> " . $promocion['valor_descuento'] . " Cuotas sin Interés </span>";
+                echo " </div> ";
+                echo " <div class='product-info-vertical'> ";
+                echo " <p class='product-title-sm' style='color: var(--color-text-main-light);'>{$promocion['nombre']}</p> ";
+                echo " <p class='product-meta' style='font-size: 0.8rem; color: var(--color-text-sec-light);'>Incluye: {$promocion['productos_nombres']}</p> ";
+                // echo " <p class='product-meta'>{$promocion['descripcion']}</p> ";
+                // echo " <div class='price-row'> ";
+                // echo " <p class='price-main' style='color: var(--primary); font-weight: bold;'>¡Oferta!</p> ";
+                // echo " </div> ";
+                echo " </div> ";
+                echo " </div> ";
+
+            }
+            ?>
+        </div>
 
     </div>
     <!-- Información y Sucursales Section -->
-    <div class="info-box">
+    <div class="info-box"
+        style="margin-bottom: 2rem; background-color: var(--color-bg-light); border-color:1px solid var(--color-border-light);">
         <h2 class="section-title" style="margin-bottom: 1rem; font-size: 1.25rem;">Información y Ubicación</h2>
         <div style="display: flex; flex-direction: column;">
             <div class="info-row">
                 <span class="app-icon" style="color: var(--color-primary);">location_on</span>
                 <div class="info-content">
-                    <p class="info-title">Taller</p>
-                    <p class="info-text">Lavalle 5045</p>
-                    <p class="info-sub">Ezpeleta, Quilmes, Pcia. de Buenos Aires</p>
+                    <p class="info-title" style="color: var(--color-text-main-light);">Taller</p>
+                    <p class="info-text" style="color: var(--color-text-main-light);">Lavalle 5045</p>
+                    <p class="info-sub" style="color: var(--color-text-sec-light);">Ezpeleta, Quilmes, Pcia. de Buenos
+                        Aires</p>
                 </div>
             </div>
             <div class="info-row">
@@ -170,10 +178,11 @@ $promociones = $registro3->fetchAll(PDO::FETCH_ASSOC);
                         </button> -->
                     </div>
                     <?php foreach ($horarios as $horario): ?>
-                        <p class="info-text"><?php echo $horario['dia_semana']; ?>:
+                        <p class="info-text" style="color: var(--color-text-main-light);">
+                            <?php echo $horario['dia_semana']; ?>:
                             <?php
                             if ($horario['abierto'] == 1) {
-                                echo $horario['hora_apertura'] . ' - ' . $horario['hora_cierre'];
+                                echo date('H:i', strtotime($horario['hora_apertura'])) . ' - ' . date('H:i', strtotime($horario['hora_cierre']));
                             } else {
                                 echo 'Cerrado';
                             } ?>

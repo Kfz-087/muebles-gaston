@@ -40,11 +40,11 @@ $conn = conectar();
                 extend: {
                     colors: {
                         "primary-fixed-dim": "rgb(124, 61, 50)",
-                        "outline": "#e2e8f0",
+                        "outline": "#44403c",
                         "on-surface-variant": "#475569",
-                        "surface-bright": "#ffffff",
+                        "surface-bright": "#292524",
                         "tertiary": "#00687b",
-                        "on-secondary": "#ffffff",
+                        "on-secondary": "#fafaf9",
                         "outline-variant": "#cbd5e1",
                         "tertiary-fixed": "#adecff",
                         "on-secondary-fixed-variant": "#544606",
@@ -57,7 +57,7 @@ $conn = conectar();
                         "error-container": "#ffdad6",
                         "on-tertiary-container": "#006172",
                         "on-error": "#ffffff",
-                        "background": "#f8f8f5",
+                        "background": "#1c1917",
                         "on-primary-container": "#685700",
                         "on-primary": "#0f172a",
                         "error": "#ba1a1a",
@@ -66,12 +66,12 @@ $conn = conectar();
                         "tertiary-container": "#5bdfff",
                         "secondary-fixed": "#f8e295",
                         "inverse-primary": "#e9c400",
-                        "surface-container-lowest": "#ffffff",
+                        "surface-container-lowest": "#0a0a0a",
                         "surface-container-high": "#f0e7d6",
                         "primary-container": "#f2cc0d",
                         "primary-fixed": "#ffe16e",
-                        "primary": "rgb(124, 61, 50)",
-                        "surface": "#f8f8f5",
+                        "primary": "#d4af37",
+                        "surface": "#292524",
                         "instagram": "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
                         "whatsapp": "#25D366",
                         "facebook": "#104b99ff",
@@ -82,14 +82,14 @@ $conn = conectar();
                         "on-primary-fixed-variant": "#544600",
                         "surface-container": "#f5eddb",
                         "on-primary-fixed": "#221b00",
-                        "on-surface": "#0f172a",
-                        "on-background": "#0f172a",
-                        "secondary": "#0f172a",
+                        "on-surface": "#fafaf9",
+                        "on-background": "#fafaf9",
+                        "secondary": "#292524",
                         "on-tertiary-fixed-variant": "#004e5d",
                         "inverse-surface": "#1e293b",
                         "secondary-fixed-dim": "#dac67c",
                         "tertiary-fixed-dim": "#50d6f6",
-                        "surface-container-low": "#ffffff"
+                        "surface-container-low": "#151311"
                     },
                     fontFamily: {
                         "headline": ["Work Sans"],
@@ -129,10 +129,10 @@ $conn = conectar();
     <header>
         <!-- Sticky Header -->
         <div
-            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
+            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#44403c] dark:border-[#3d3920]">
 
             <h2
-                class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                class="text-[#fafaf9] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
                 Contactos
             </h2>
 

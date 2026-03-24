@@ -58,8 +58,8 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
                         "secondary-container": "#1e293b",
                         "primary-container": "#f2cc0d",
                         "outline-variant": "#cbd5e1",
-                        "outline": "#e2e8f0",
-                        "surface": "#f8f8f5",
+                        "outline": "#44403c",
+                        "surface": "#292524",
                         "on-primary-container": "#685700",
                         "tertiary-fixed-dim": "#50d6f6",
                         "inverse-surface": "#1e293b",
@@ -70,37 +70,37 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
                         "on-surface-variant": "#475569",
                         "primary-fixed": "#ffe16e",
                         "surface-container-highest": "#eae2d0",
-                        "primary": "#f2cc0d",
-                        "on-surface": "#0f172a",
+                        "primary": "#d4af37",
+                        "on-surface": "#fafaf9",
                         "inverse-primary": "#e9c400",
                         "surface-dim": "#e1d9c8",
-                        "surface-container-lowest": "#ffffff",
+                        "surface-container-lowest": "#0a0a0a",
                         "on-secondary-container": "#f2cc0d",
-                        "background": "#f8f8f5",
+                        "background": "#1c1917",
                         "tertiary": "#00687b",
                         "secondary-fixed-dim": "#dac67c",
                         "secondary-fixed": "#f8e295",
                         "on-primary": "#0f172a",
                         "on-tertiary-fixed-variant": "#004e5d",
                         "on-error": "#ffffff",
-                        "secondary": "#0f172a",
+                        "secondary": "#292524",
                         "surface-container-high": "#f0e7d6",
                         "inverse-on-surface": "#f8f0de",
-                        "surface-container-low": "#ffffff",
+                        "surface-container-low": "#151311",
                         "primary-fixed-dim": "#e9c400",
                         "on-primary-fixed-variant": "#544600",
                         "on-error-container": "#93000a",
                         "surface-variant": "#eae2d0",
-                        "surface-bright": "#ffffff",
+                        "surface-bright": "#292524",
                         "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff",
+                        "on-secondary": "#fafaf9",
                         "on-tertiary-container": "#006172",
                         "surface-container": "#f5eddb",
                         "tertiary-container": "#5bdfff",
                         "on-secondary-fixed": "#221b00",
                         "on-primary-fixed": "#221b00",
                         "tertiary-fixed": "#adecff",
-                        "on-background": "#0f172a",
+                        "on-background": "#fafaf9",
                         "surface-tint": "#705d00"
                     },
                     fontFamily: {
@@ -220,12 +220,12 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
 <body class="bg-background text-on-background min-h-screen pb-24">
     <!-- TopAppBar -->
     <header
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
+        class="fixed top-0 w-full z-50 bg-[#292524]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
         <div
-            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#e8e4d8] dark:border-[#3d3920]">
+            class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#44403c] dark:border-[#3d3920]">
 
             <div
-                class="text-[#1c190d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                class="text-[#fafaf9] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
                 Multimedia
             </div>
 
@@ -240,7 +240,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
                     class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
                 <input id="search-input"
                     class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary text-on-surface font-medium placeholder:text-on-surface-variant/50"
-                    placeholder="Search workshop projects..." type="text"
+                    placeholder="Buscar proyectos..." type="text"
                     value="<?php echo htmlspecialchars(isset($_GET['search_input']) ? $_GET['search_input'] : ''); ?>" />
             </div>
             <div class="flex gap-2 mt-4 overflow-x-auto pb-2 scrollbar-hide">
@@ -309,7 +309,7 @@ $formatosData = $consultaFormatos->fetchAll(PDO::FETCH_ASSOC);
                                     src="<?php echo $rutaArchivo; ?>" alt="<?php echo $nombreCorto; ?>" loading="lazy" />
                                 <div class="absolute top-3 left-3 flex gap-2">
                                     <span
-                                        class="bg-white text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1 shadow-sm">
+                                        class="bg-[#292524] text-secondary px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase flex items-center gap-1 shadow-sm">
                                         <span class="material-symbols-outlined text-[12px]" data-icon="image">image</span> FOTO
                                     </span>
                                 </div>
